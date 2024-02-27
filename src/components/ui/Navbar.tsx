@@ -2,14 +2,15 @@
 import Container from "./Containert";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/relief-aid-logo.png"
-import { useAppSelector } from "../../redux/hook";
+import { useAppDispatch, useAppSelector } from "../../redux/hook";
+import { logOut } from "../../redux/auth/authSlice";
 
 const Navbar = () => {
-  const user=useAppSelector((state)=>state.auth.user)
-  console.log(user)
-  // const user={
-  //  name:"sdgrdgtf"
-  // }
+  const user=useAppSelector((state)=>state.auth.user);
+  const dispatch=useAppDispatch()
+  const handleLogout=()=>{
+    dispatch(logOut())
+  }
   return (
     <Container className="bg-slate-400/50 flex justify-between items-center">
       <NavLink to={"/"}>
@@ -36,12 +37,13 @@ const Navbar = () => {
     
      
       {(user?.email) ? (
-        <NavLink
+        <button
           className="bg-amber-300 text-black font-semibold text-xl p-2 rounded-md m-2"
-          to={"/logout"}
+         
+          onClick={handleLogout}
         >
           Logout
-        </NavLink>
+        </button>
       ):  (
         <NavLink
           className="bg-amber-300 text-black font-semibold text-xl p-2 rounded-md m-2"
