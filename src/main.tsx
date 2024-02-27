@@ -11,6 +11,7 @@ import Register from "./pages/Register";
 import { Provider } from "react-redux";
 import { persistor, store } from "./redux/store";
 import { PersistGate } from 'redux-persist/integration/react'
+import ProtectedRoute from "./components/layouts/ProtectedRoute";
 
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: "dashboard",
-        element: <Dashboard />,
+        element: <ProtectedRoute><Dashboard /></ProtectedRoute>,
       },
       {
         path: "login",
