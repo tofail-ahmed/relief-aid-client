@@ -6,6 +6,7 @@ import { useAppSelector } from "../../redux/hook";
 
 const Navbar = () => {
   const user=useAppSelector((state)=>state.auth.user)
+  console.log(user)
   // const user={
   //  name:"sdgrdgtf"
   // }

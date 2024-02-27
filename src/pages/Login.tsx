@@ -1,14 +1,29 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useLoginMutation } from '../redux/auth/authApi';
+import { useAppDispatch } from '../redux/hook';
+import { setUser } from '../redux/auth/authSlice';
 
 const LoginForm = () => {
+  const [login]=useLoginMutation();
+  const navigate=useNavigate()
+  const dispatch=useAppDispatch();
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = (data:any) => {
-    console.log(data); 
-    // reset();
+  const onSubmit = async(data:any) => {
+   const userInfo={
+    email:data.email,
+    password:data.password
+   };
+   const res=await login(userInfo);
+   console.log(res)
+  if(res.data.success===true){
+    dispatch(setUser(userInfo))
+    alert("Login succesfull")
+    navigate('/')
+  }
   };
 
   return (
