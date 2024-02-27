@@ -18,7 +18,7 @@ const LoginForm = () => {
     password:data.password
    };
    const res=await login(userInfo);
-   console.log(res)
+  //  console.log(res)
   if(res.data.success===true){
     dispatch(setUser(userInfo))
     alert("Login succesfull")
