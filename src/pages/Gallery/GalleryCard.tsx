@@ -12,13 +12,13 @@ const GalleryCard = ({ img }) => {
   };
   return (
     <div>
-      <div className="main">
-        <button className="btn">
-          <img className="img" src={img} alt="" />
+      <div className="parent">
+        <button className="son lg:h-[300px] lg:w-[250px] w-[200px] h-[250px] rounded-ss-lg rounded-ee-lg">
+          <img className="img lg:h-[400px] lg:w-[300px] w-[200px] h-[250px]" src={img.img} alt="" />
           <Link
             onClick={scrollToTop}
             to="/relief-goods"
-            className="button-text flex items-center gap-1 "
+            className="son-text flex items-center gap-1 "
           >
             Donate Now
             <BiDonateHeart />

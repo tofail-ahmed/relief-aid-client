@@ -25,7 +25,7 @@ export default function App() {
     progressContent.current!.textContent = `${Math.ceil(time / 1000)}s`;
   };
   return (
-    <div className="z-0">
+    <div className="z-0 bannerBg">
       <Swiper
         spaceBetween={50}
         centeredSlides={true}

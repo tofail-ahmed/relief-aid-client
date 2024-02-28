@@ -1,16 +1,24 @@
 import React from 'react'
-import img1 from '../../assets/banner-2.jpg'
-import img2 from '../../assets/banner-4.jpg'
-import img3 from '../../assets/banner-5.jpg'
+
 import Container from '../../components/ui/Containert'
 import GalleryCard from './GalleryCard'
+import { useGalleryQuery } from '../../redux/gallery/galleryApi'
 const Gallery = () => {
+      const {data,isLoading}=useGalleryQuery("");
+      console.log(data)
+if(isLoading){
+      return <div>Loading...</div>
+}
   return (
-    <Container className='grid grid-cols-3'>
-      <GalleryCard img={img1}></GalleryCard>
-      <GalleryCard img={img2}></GalleryCard>
-      <GalleryCard img={img3}></GalleryCard>
+  <div className='galleryBg'>
+        <Container className='grid lg:grid-cols-5 grid-cols-2 gap-2 '>
+     {
+      data?.data.map((img)=>
+      ( <GalleryCard img={img}></GalleryCard>))
+     }
+      
     </Container>
+  </div>
   )
 }
 

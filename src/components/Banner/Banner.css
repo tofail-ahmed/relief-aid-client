@@ -11,7 +11,7 @@
       background: #eee;
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
       font-size: 14px;
-      color: #000;
+      color: #0000001a;
       margin: 0;
       padding: 0;
     }
@@ -24,7 +24,7 @@
     .swiper-slide {
       text-align: center;
       font-size: 18px;
-      background: #fff;
+      background: #ffffff09;
     
       /* Center slide text vertically */
       display: flex;
@@ -68,4 +68,6 @@
       stroke-dasharray: 125.6;
       transform: rotate(-90deg);
     }
-    
+    .bannerBg{
+      background: linear-gradient(276deg, rgba(127, 230, 182, 0.493), rgba(179, 96, 168, 0.596));
+}
