@@ -8,7 +8,7 @@ const AllReliefGoods = () => {
   if(isLoading){
     return <div>Loading...</div>
   }
-  console.log(data)
+  // console.log(data)
   return (
     <Container className="grid lg:grid-cols-3 grid-cols-2">
     {

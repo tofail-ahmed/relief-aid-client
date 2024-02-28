@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "./Containert";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/relief-aid-logo.png";
@@ -38,7 +37,7 @@ const Header = () => {
             >
               <li>
             <NavLink
-          className="bg-amber-300 text-black font-semibold text-xl p-2 rounded-md m-2"
+          className="bg-orange-500 text-black font-semibold  p-2 rounded-md m-2"
           to={"/"}
         >
           Home
@@ -47,7 +46,7 @@ const Header = () => {
 
             <li>
             <NavLink
-          className="bg-amber-300 text-black font-semibold text-xl p-2 rounded-md m-2"
+          className="bg-orange-500 text-black font-semibold  p-2 rounded-md m-2"
           to={"/relief-goods"}
         >
           All Relief goods
@@ -55,7 +54,7 @@ const Header = () => {
             </li>
             <li>
             <NavLink
-          className="bg-amber-300 text-black font-semibold text-xl p-2 rounded-md m-2"
+          className="bg-orange-500 text-black font-semibold  p-2 rounded-md m-2"
           to={"/dashboard"}
         >
           Dashboard
@@ -71,7 +70,7 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1">
             <li>
             <NavLink
-          className="bg-amber-300 text-black font-semibold text-xl p-2 rounded-md m-2"
+          className="bg-orange-500 text-black font-semibold  p-2 rounded-md m-2"
           to={"/"}
         >
           Home
@@ -80,7 +79,7 @@ const Header = () => {
 
             <li>
             <NavLink
-          className="bg-amber-300 text-black font-semibold text-xl p-2 rounded-md m-2"
+          className="bg-orange-500 text-black font-semibold  p-2 rounded-md m-2"
           to={"/relief-goods"}
         >
           All Relief goods
@@ -88,7 +87,7 @@ const Header = () => {
             </li>
             <li>
             <NavLink
-          className="bg-amber-300 text-black font-semibold text-xl p-2 rounded-md m-2"
+          className="bg-orange-500 text-black font-semibold  p-2 rounded-md m-2"
           to={"/dashboard"}
         >
           Dashboard
@@ -99,7 +98,7 @@ const Header = () => {
         <div className="navbar-end">
           {user?.email ? (
             <button
-              className="bg-amber-300 text-black font-semibold  p-2 rounded-md m-2"
+              className="bg-orange-500 text-black font-semibold  p-2 rounded-md m-2"
               onClick={handleLogout}
             >
               <span className="flex items-center gap-1">
@@ -109,7 +108,7 @@ const Header = () => {
             </button>
           ) : (
             <NavLink
-              className="bg-amber-300 text-black font-semibold  p-2 rounded-md m-2"
+              className="bg-orange-500 text-black font-semibold  p-2 rounded-md m-2"
               to={"/login"}
             >
               <span className="flex items-center gap-1">Login<IoIosLogIn /></span>
