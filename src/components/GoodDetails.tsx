@@ -12,7 +12,9 @@ const GoodDetails = () => {
   }
   return (
     <Container>GoodDetails:
-      <h1>{data?.data.title}</h1>
+      <div>
+        <img src={data.data.image} alt="" />
+      </div>
     </Container>
   )
 }

@@ -25,7 +25,7 @@ export default function App() {
     progressContent.current!.textContent = `${Math.ceil(time / 1000)}s`;
   };
   return (
-    <>
+    <div className="z-0">
       <Swiper
         spaceBetween={50}
         centeredSlides={true}
@@ -72,7 +72,7 @@ export default function App() {
         <SwiperSlide>
           <div className="lg:w-[1280px] w-[550px] lg:h-[500px] h-[150px] relative">
             <img src={img2} alt="" />
-            <div className="absolute lg:top-[20%] top-[5%] right-[8%] text-start">
+            <div className="absolute lg:top-[20%] top-[2%] lg:right-[8%]  text-start">
               <h1 className="text-white lg:text-5xl text-xl lg:font-extrabold fontbold">
                 NEED CHANGES <span className="text-orange-500">?</span>
               </h1>
@@ -100,7 +100,7 @@ export default function App() {
         <SwiperSlide>
           <div className="lg:w-[1280px] w-[550px] lg:h-[500px] h-[150px] relative">
             <img src={img3} alt="" />
-            <div className="absolute lg:top-[30%] top-[5%] lg:left-[25%] left-[8%] text-start">
+            <div className="absolute lg:top-[30%] top-[2%] lg:left-[25%] left-[5%] text-start">
               <h1 className="text-slate-500 lg:text-5xl text-xl lg:font-extrabold fontbold">
               GIVE HOPE, GIVE HELP, 
               </h1>
@@ -133,6 +133,6 @@ export default function App() {
           <span ref={progressContent}></span>
         </div>
       </Swiper>
-    </>
+    </div>
   );
 }
