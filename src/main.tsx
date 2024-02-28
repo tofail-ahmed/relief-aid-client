@@ -13,15 +13,15 @@ import { persistor, store } from "./redux/store";
 import { PersistGate } from 'redux-persist/integration/react'
 import ProtectedRoute from "./components/layouts/ProtectedRoute";
 import Home from "./pages/Home/Home";
-
+import GoodDetails from "./components/GoodDetails";
 
 const router = createBrowserRouter([
   {
-    path: "/home",
+    path: "/",
     element: <MainLayout />,
     children: [
       {
-        path: "home",
+        index: true,
         element: <Home></Home>,
       },
       {
@@ -44,6 +44,11 @@ const router = createBrowserRouter([
         path: "register",
         element: <Register />,
       },
+      {
+        path:`relief-details/:id`,
+        element:<GoodDetails></GoodDetails>,
+        
+      }
     ],
   },
 ]);

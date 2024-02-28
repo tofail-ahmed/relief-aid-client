@@ -15,12 +15,12 @@ const Navbar = () => {
   return (
     <div>
       <Container className="bg-slate-400/50 flex justify-between items-center">
-        <NavLink to={"/home"}>
+        <NavLink to={"/"}>
           <img className="size-[80px] p-2 rounded-full" src={logo} alt="" />
         </NavLink>
         <NavLink
           className="bg-amber-300 text-black font-semibold text-xl p-2 rounded-md m-2"
-          to={"/home"}
+          to={"/"}
         >
           Home
         </NavLink>

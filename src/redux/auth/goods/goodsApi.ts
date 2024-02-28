@@ -7,7 +7,13 @@ const goodsApi=baseApi.injectEndpoints({
                         url:"/goods",
                         method:"GET"
                   })
+            }),
+            singleGood:builder.query({
+                  query:(id)=>({
+                        url:`/goods/${id}`,
+                        method:"GET"
+                  })
             })
       })
 })
-export const {useGoodsQuery}=goodsApi;
+export const {useGoodsQuery,useSingleGoodQuery}=goodsApi;
