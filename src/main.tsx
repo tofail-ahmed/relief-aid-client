@@ -14,6 +14,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import ProtectedRoute from "./components/layouts/ProtectedRoute";
 import Home from "./pages/Home/Home";
 import GoodDetails from "./components/GoodDetails";
+import Gallery from "./pages/Gallery/Gallery";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
         path:`relief-details/:id`,
         element:<GoodDetails></GoodDetails>,
         
+      },
+      {
+        path:"gallery",
+        element:<Gallery/>
       }
     ],
   },

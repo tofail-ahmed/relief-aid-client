@@ -11,11 +11,12 @@ const Header = () => {
     dispatch(logOut());
   };
   return (
-    <Container>
-      <div className="navbar bg-base-100">
+    <div>
+      <Container>
+      <div className="navbar bg-red-100/50 ">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -33,7 +34,7 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-red-500 rounded-box w-52"
             >
               <li>
             <NavLink
@@ -118,6 +119,7 @@ const Header = () => {
         </div>
       </div>
     </Container>
+    </div>
   );
 };
 

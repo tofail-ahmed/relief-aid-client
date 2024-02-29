@@ -1,9 +1,19 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-
-const GoodCard = ({ good }) => {
+export interface IGood{
+  image:string;
+  title:string;
+  category:string;
+  amount:number;
+  _id:string
+}
+export interface IGoodCardProps{
+  good:IGood;
+  className?:string
+}
+const GoodCard = ({ good,className }:IGoodCardProps) => {
   return (
-    <div className="flex flex-col gap-2 justify-center  border-2 border-zinc-300 bg-slate-300/50">
+    <div className={`flex flex-col gap-2 justify-center  border-2 border-zinc-300 bg-slate-500/50 ${className}`}>
       <div className="mx-auto">
         <img
           className="lg:w-[300px] lg:h-[400px] w-[200px] h-[250px]"

@@ -6,7 +6,7 @@
     
     /* button css------------ */
     .son {
-      border: 2px solid rgba(255, 166, 0, 0.253);
+      border: 5px solid rgba(20, 20, 19, 0.253);
       color: transparent;
       background-color: transparent;
       position: relative; /* Add position: relative to allow z-index to work */
@@ -21,7 +21,7 @@
       padding-top: 100px;
       height: 100%;
       width: 100%;
-      background-color: rgba(255, 68, 0, 0.466);
+      background-color: rgba(161, 170, 161, 0.479);
       position: absolute;
       left: 0;
       top: 0;
@@ -37,6 +37,7 @@
     
     .son:hover::after {
       transform: translateY(0) scale(2); /* Adjust the transform properties */
+     
     }
     
     .img {
@@ -54,14 +55,16 @@
       z-index: 5;
       color: rgba(255, 255, 255, 0); /* Make the text color white */
       transition: transform 500ms ease; /* Add transition for smooth animation */
+      
     }
     
     .son:hover .son-text {
       transform: translate(-50%, -50%) scale(1.1);
        /* Scale the text on hover */
-       color: rgb(252, 252, 252);
-       border: 2px solid rgb(236, 230, 228);
-       background-color: rgba(144, 142, 158, 0.377);
+       color: rgb(19, 18, 18);
+       
+       border: 2px solid rgb(12, 12, 12);
+       background-color: rgba(238, 129, 4, 0.377);
        border-radius: 5px;
     }
     
