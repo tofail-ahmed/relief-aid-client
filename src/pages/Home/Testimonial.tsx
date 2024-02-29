@@ -1,9 +1,15 @@
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useTestimonialQuery } from "../../redux/testimonials/TestimonialApi";
 import Container from "../../components/ui/Containert";
-
+interface IQuote{
+      img:string;
+      name:string;
+      designation:string;
+      testimonial:string;
+}
 function Testimonial() {
   const { data, isLoading } = useTestimonialQuery("");
 //   console.log(data);
@@ -36,7 +42,7 @@ function Testimonial() {
     <div className="testimonialBg  py-10">
       <Container className="slider-container text-black mx-auto  border-2 border-slate-300 ">
         <Slider {...settings}>
-          {data?.data.map((quote) => (
+          {data?.data.map((quote:IQuote) => (
             <div className=" m-10 text-center  ">
              <div >
              <img

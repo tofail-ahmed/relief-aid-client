@@ -3,6 +3,7 @@ import Banner from '../../components/Banner/Banner'
 import HomeGoods from './HomeGoods'
 import HomeGallery from './HomeGallery'
 import Testimonial from './Testimonial'
+import Deliver from './Deliver'
 const Home = () => {
   return (
     <div>
@@ -10,6 +11,7 @@ const Home = () => {
       <HomeGoods></HomeGoods>
       <HomeGallery/>
       <Testimonial/>
+      <Deliver/>
     </div>
   )
 }
