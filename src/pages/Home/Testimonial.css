@@ -1,35 +1,47 @@
-#app { height: 100% }
-/* html,
-body {
-  position: relative;
-  height: 100%;
+/* Testimonial.css */
+.App {
+  font-family: sans-serif;
+  text-align: center;
 }
 
-body {
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-} */
-
-/* .swiperTest {
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -150px;
-  margin-top: -150px;
+.glider-prev,
+.glider-next {
+  top: 75px;
 }
 
-.swiper-slideTest {
-  background-position: center;
-  background-size: cover;
+.glider-prev,
+.glider-next {
+  background: #ffffff;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  width: 43px;
+  height: 43px;
 }
 
-.swiper-slideTest img {
-  display: block;
-  width: 100%;
-} */
+.glider-prev {
+  left: 30px;
+}
+
+.glider-next {
+  right: 30px;
+}
+
+.glider {
+  height: 400px;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.glider-dots {
+  margin-top: 15px;
+}
+
+.glider-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f5f5f5;
+}

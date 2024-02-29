@@ -5,17 +5,19 @@ import HomeGallery from './HomeGallery'
 import Testimonial from './Testimonial'
 import Deliver from './Deliver'
 import Contact from './Contact'
+import TestimonialGlider from "./TestimonialGlider";
 const Home = () => {
   return (
     <div>
-      <Banner/>
+      <Banner />
       <HomeGoods></HomeGoods>
-      <HomeGallery/>
-      <Testimonial/>
-      <Deliver/>
-      <Contact/>
+      <HomeGallery />
+      {/* <Testimonial /> */}
+      <Deliver />
+      <TestimonialGlider />
+      <Contact />
     </div>
-  )
-}
+  );
+};
 
 export default Home
