@@ -9,7 +9,7 @@ import Container from "../../components/ui/Containert";
 import DeliverCard from "../../utils/DeliverCard";
 const Deliver = () => {
   return (
-    <div className="deliverBg">
+    <div className="deliverBg py-10">
       <Container>
       <div className="grid lg:grid-cols-3 gap-4 ">
       

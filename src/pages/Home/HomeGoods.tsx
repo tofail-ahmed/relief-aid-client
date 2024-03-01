@@ -13,7 +13,7 @@ const HomeGoods = () => {
             return <div>Loading...</div>
       }
   return (
-    <div className="goodsBg text-black">
+    <div className="goodsBg text-black py-10">
       <Container className="grid lg:grid-cols-3 grid-cols-2 gap-8 ">
         {data?.data.slice(0, 6).map((good) => (
           <GoodCard good={good}></GoodCard>

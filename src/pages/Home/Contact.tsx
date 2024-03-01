@@ -32,7 +32,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className="contactBg py-10">
       <Container className="text-black flex justify-between items-center lg:flex-row flex-col ">
         <div className="mx-auto text-center">
           <SectionHeader text="GET IN TOUCH" />

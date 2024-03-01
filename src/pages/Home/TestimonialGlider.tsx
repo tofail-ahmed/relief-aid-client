@@ -41,7 +41,7 @@ export default function TestimonialGlider() {
 
   return (
     <div className="testimonialBg">
-      <Container className="my-20 ">
+      <Container className="py-10 ">
         <div className="App ">
           <div className="container ">
             <Glider
@@ -53,7 +53,7 @@ export default function TestimonialGlider() {
               className="pb-10 pt-16  "
             >
               {data?.data.map((quote: IQuote, index: number) => (
-                <div key={index} className=" text-center text-black">
+                <div key={index} className=" text-center text-black bg-orange-500/30">
                   <div className="">
                     <img
                       className="rounded-full size-[100px] mx-auto -mt-10 border-2"

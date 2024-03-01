@@ -12,7 +12,7 @@ if(isLoading){
       return <div>Loading...</div>
 }
   return (
-  <div className='galleryBg'>
+  <div className='galleryBg py-10'>
         <Container className='grid lg:grid-cols-5 grid-cols-2 gap-2 '>
      {
       data?.data.slice(0,10).map((img)=>

@@ -10,3 +10,9 @@
 .deliverBg{
       background: linear-gradient(276deg, rgba(58, 138, 204, 0.493), rgba(204, 146, 37, 0.596));
 }
+.contactBg{
+      background: linear-gradient(276deg, rgba(82, 204, 58, 0.493), rgba(204, 37, 154, 0.596));
+}
+.aboutBg{
+      background: linear-gradient(276deg, rgba(58, 80, 204, 0.267), rgba(37, 204, 73, 0.336));
+}
