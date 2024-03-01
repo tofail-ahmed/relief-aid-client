@@ -21,7 +21,7 @@ const Donation = () => {
       <button
         className={` ${
           hover ? "bottom-0.5 right-1.5 " : "top-2 left-1"
-        } -z-50 relative -mt-[48px] duration-1000 transform  bg-transparent border-[1px] border-green-400 text-xl text-transparent font-semibold px-4 py-2 flex items-center justify-center gap-2`}
+        } -z-10 relative -mt-[48px] duration-1000 transform  bg-transparent border-[1px] border-green-400 text-xl text-transparent font-semibold px-4 py-2 flex items-center justify-center gap-2`}
       >
         Donation
         <GiSelfLove />
