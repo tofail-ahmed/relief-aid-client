@@ -28,6 +28,7 @@ const Contact = () => {
     e.preventDefault();
     console.log(formData); // Log form data
     // You can perform additional actions like sending data to server here
+    alert("Info added successfully")
   };
 
   return (
@@ -84,7 +85,7 @@ const Contact = () => {
               onChange={handleChange}
             ></textarea>
            <div>
-           <button className="bg-orange-500 hover:bg-slate-500 text-md font-semibol hover:text-white" type="submit">Submit</button>
+           <button className="bg-orange-500 hover:bg-slate-500 text-md font-semibol hover:text-white rounded-md px-2 py-1" type="submit">Submit</button>
            </div>
           </form>
         </div>

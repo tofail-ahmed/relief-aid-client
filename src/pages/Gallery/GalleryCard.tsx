@@ -15,10 +15,14 @@ const GalleryCard = ({ img ,className}:IGalleryCardProps) => {
     });
   };
   return (
-    <div>
-      <div className={`parent ${className}`}>
+    <div className="bg-gray-700">
+      <div className={`parent ${className} opacity-60`}>
         <button className="son lg:h-[300px] lg:w-[250px] w-[200px] h-[250px] rounded-ss-lg rounded-ee-lg">
-          <img className="img lg:h-[400px] lg:w-[300px] w-[200px] h-[250px]" src={img.img} alt="" />
+          <img
+            className="img lg:h-[400px] lg:w-[300px] w-[200px] h-[250px]"
+            src={img.img}
+            alt=""
+          />
           <Link
             onClick={scrollToTop}
             to="/relief-goods"

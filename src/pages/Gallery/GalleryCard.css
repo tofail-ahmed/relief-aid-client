@@ -61,7 +61,7 @@
     .son:hover .son-text {
       transform: translate(-50%, -50%) scale(1.1);
        /* Scale the text on hover */
-       color: rgb(19, 18, 18);
+       color: rgb(252, 247, 247);
        
        border: 2px solid rgb(12, 12, 12);
        background-color: rgba(238, 129, 4, 0.377);

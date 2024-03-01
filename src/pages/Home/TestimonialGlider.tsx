@@ -50,13 +50,13 @@ export default function TestimonialGlider() {
               slidesToScroll={1}
               scrollLock
               hasDots
-              className="pb-10 pt-16 "
+              className="pb-10 pt-16  "
             >
               {data?.data.map((quote: IQuote, index: number) => (
-                <div key={index} className="py-24 text-center text-black">
+                <div key={index} className=" text-center text-black">
                   <div className="">
                     <img
-                      className="rounded-full size-[100px] mx-auto -mt-20"
+                      className="rounded-full size-[100px] mx-auto -mt-10 border-2"
                       src={quote.img}
                       alt=""
                     />
