@@ -17,7 +17,7 @@ const Donation = ({onClick}:IDonationProps) => {
       onClick={onClick}
         onMouseEnter={handleHover}
         onMouseLeave={handleHover}
-        className=" z-50 duration-500 bg-green-400 text-xl text-white font-semibold px-4 py-2 flex items-center justify-center gap-2"
+        className={` z-50 duration-500 bg-green-400 text-xl text-white font-semibold px-4 py-2 flex items-center justify-center gap-2`}
       >
         Donation
         <GiSelfLove />

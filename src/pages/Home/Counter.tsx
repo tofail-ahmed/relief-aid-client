@@ -7,7 +7,7 @@ import { FaDonate } from "react-icons/fa";
 
 const Counter = () => {
   return (
-    <div className="bg-orange-500">
+    <div className="bg-orange-700/50">
       <Container className="flex lg:flex-row flex-col justify-around py-10 font-bold gap-8">
         <div className=" text-white flex flex-col justify-center items-center space-y-2">
           <span className="text-6xl">
