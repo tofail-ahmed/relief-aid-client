@@ -7,9 +7,12 @@ import img5 from "../../assets/weDeliver/clean+water+pic.jpg";
 import img6 from "../../assets/weDeliver/conservation-img.jpg";
 import Container from "../../components/ui/Containert";
 import DeliverCard from "../../utils/DeliverCard";
+import SectionHeader from "../../utils/SectionHeader";
+
 const Deliver = () => {
   return (
     <div className="deliverBg py-10">
+      <SectionHeader text="WHAT WE DELIVER ?" />
       <Container>
       <div className="grid lg:grid-cols-3 gap-4 ">
       

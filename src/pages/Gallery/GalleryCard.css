@@ -23,12 +23,12 @@
       width: 100%;
       background-color: rgba(161, 170, 161, 0.479);
       position: absolute;
-      left: 0;
-      top: 0;
-      transform: translateY(100%);
-      transition-duration: 500ms;
-      transition-timing-function: ease;
-      z-index: -1; /* Move the pseudo-element below the button */
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%) scale(0);
+      /* transition-duration: 1000ms;
+      transition-timing-function: ease; */
+      z-index: -1;
     }
     
     .son:hover {
@@ -36,8 +36,16 @@
     }
     
     .son:hover::after {
-      transform: translateY(0) scale(2); /* Adjust the transform properties */
-     
+      animation: spreadAnimation 1.5s ease forwards; /* Apply the animation on hover */
+    }
+    
+    @keyframes spreadAnimation {
+      from {
+        transform: translate(-50%, -50%) scale(0);
+      }
+      to {
+        transform: translate(-50%, -50%) scale(2);
+      }
     }
     
     .img {
