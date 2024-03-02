@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { GiSelfLove } from "react-icons/gi";
 import "./Donation.css"; // Import the CSS file where you define the styles
+import NumberCounter from "../components/ui/NumberCounter";
+interface IDonationProps {
+  onClick?: () => void; // Define the type for onClick prop
+}
 
-
-const Donation = () => {
+const Donation = ({onClick}:IDonationProps) => {
   const [hover, setHover] = useState(false);
   const handleHover = () => {
     setHover(!hover);
@@ -11,6 +14,7 @@ const Donation = () => {
   return (
     <div className=" py-5">
       <button
+      onClick={onClick}
         onMouseEnter={handleHover}
         onMouseLeave={handleHover}
         className=" z-50 duration-500 bg-green-400 text-xl text-white font-semibold px-4 py-2 flex items-center justify-center gap-2"
@@ -26,6 +30,10 @@ const Donation = () => {
         Donation
         <GiSelfLove />
       </button>
+      <div className="text-3xl text-black">
+        <h1>Total Donation</h1>
+        <NumberCounter endValue={1234}/>
+      </div>
     </div>
   );
 };

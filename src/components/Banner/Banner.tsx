@@ -43,7 +43,7 @@ export default function App() {
       >
         <SwiperSlide>
           <div className="lg:w-[1280px] w-[550px] lg:h-[500px] h-[150px] relative">
-            <img src={img1} alt="" />
+            <img className="bg-gray-900" src={img1} alt="" />
             <div className="absolute lg:top-[20%] top-[2%] lg:left-[5%] left-[5%] text-start lg:space-y-4 space-y-1">
               <h1 className="text-white lg:text-5xl text-xl lg:font-extrabold fontbold">
                 YOU HELP PEOPLE <span className="text-orange-500">?</span>

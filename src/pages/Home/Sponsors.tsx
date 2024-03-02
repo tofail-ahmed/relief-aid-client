@@ -16,7 +16,7 @@ const Sponsors = () => {
     <div>
       <div>
         <SectionHeader
-          className="text-center py-5"
+          className="text-center py-5 "
           text="Our Valuable Sponsors"
         />
       </div>

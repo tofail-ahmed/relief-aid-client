@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 import Container from '../../components/ui/Containert'
 import GalleryCard from '../Gallery/GalleryCard'
@@ -23,7 +23,7 @@ if(isLoading){
     <div className="flex justify-center">
         <NavLink
           onClick={scrollToTop}
-          className="bg-orange-500 hover:bg-slate-500 text-lg  hover:text-white rounded-md px-2 py-1 my-4 duration-500"
+          className="bg-orange-500 hover:bg-slate-500 text-lg text-black  hover:text-white rounded-md px-2 py-1 my-4 duration-500"
           to={"/gallery"}
         >
           See All

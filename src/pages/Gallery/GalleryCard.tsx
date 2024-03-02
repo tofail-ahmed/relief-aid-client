@@ -2,12 +2,15 @@ import React from "react";
 import "./GalleryCard.css";
 import { Link } from "react-router-dom";
 import { BiDonateHeart } from "react-icons/bi";
-
-export interface IGalleryCardProps{
-  img:string;
-  className?:string;
+import Donation from "../../utils/Donation";
+interface IImg {
+  img: string;
 }
-const GalleryCard = ({ img ,className}:IGalleryCardProps) => {
+export interface IGalleryCardProps {
+  img: IImg;
+  className?: string;
+}
+const GalleryCard = ({ img, className }: IGalleryCardProps) => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -28,7 +31,8 @@ const GalleryCard = ({ img ,className}:IGalleryCardProps) => {
             to="/relief-goods"
             className="son-text flex items-center gap-1 font-bold"
           >
-            Donate Now
+            {/* <Donation/> */}
+            <span className="p-1 font-semibold">DONATE</span>
             <BiDonateHeart />
           </Link>
         </button>

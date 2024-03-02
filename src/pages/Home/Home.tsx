@@ -6,12 +6,14 @@ import Deliver from './Deliver'
 import Contact from './Contact'
 import TestimonialGlider from "./TestimonialGlider";
 import AboutUs from './AboutUs'
+import Counter from './Counter'
 const Home = () => {
   return (
     <div>
       <Banner />
       <HomeGoods></HomeGoods>
       <HomeGallery />
+      <Counter/>
       <TestimonialGlider />
       <Deliver />
      <AboutUs/>
