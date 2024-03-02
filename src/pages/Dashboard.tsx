@@ -1,10 +1,18 @@
-import React from 'react'
+import SideBar from '../components/ui/Sidebar'
+import { Outlet } from 'react-router-dom'
 
 const Dashboard = () => {
   return (
-    <div>
-      <h1>This is dashboard component</h1>
+    <div className='grid grid-cols-12'>
+     
+      
+    <SideBar></SideBar>
+   
+    
+    <div className=' adminBg col-span-10 h-full px-6 '>
+      <Outlet />
     </div>
+  </div>
   )
 }
 

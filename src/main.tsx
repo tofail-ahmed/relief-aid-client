@@ -15,6 +15,8 @@ import ProtectedRoute from "./components/layouts/ProtectedRoute";
 import Home from "./pages/Home/Home";
 import GoodDetails from "./components/GoodDetails";
 import Gallery from "./pages/Gallery/Gallery";
+import Supplies from "./pages/Supplies/Supplies";
+import CreateSupply from "./pages/Supplies/CreateSupply";
 
 const router = createBrowserRouter([
   {
@@ -29,14 +31,14 @@ const router = createBrowserRouter([
         path: "relief-goods",
         element: <AllReliefGoods />,
       },
-      {
-        path: "dashboard",
-        element: (
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        ),
-      },
+      // {
+      //   path: "dashboard",
+      //   element: (
+      //     <ProtectedRoute>
+      //       <Dashboard />
+      //     </ProtectedRoute>
+      //   ),
+      // },
       {
         path: "login",
         element: <Login />,
@@ -46,14 +48,31 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path:`relief-details/:id`,
-        element:<GoodDetails></GoodDetails>,
-        
+        path: `relief-details/:id`,
+        element: <GoodDetails></GoodDetails>,
       },
       {
-        path:"gallery",
-        element:<Gallery/>
-      }
+        path: "gallery",
+        element: <Gallery />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+    ),
+    children: [
+      {
+        path: "supplies",
+        element: <Supplies />,
+      },
+      {
+        path: "create-supply",
+        element: <CreateSupply />,
+      },
     ],
   },
 ]);

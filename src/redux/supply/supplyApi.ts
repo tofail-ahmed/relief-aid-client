@@ -1,4 +1,3 @@
-import Gallery from "../../pages/Gallery/Gallery";
 import { baseApi } from "../baseApi";
 
 const supplyApi = baseApi.injectEndpoints({
