@@ -7,17 +7,19 @@ import Contact from './Contact'
 import TestimonialGlider from "./TestimonialGlider";
 import AboutUs from './AboutUs'
 import Counter from './Counter'
+import Footer from './Footer'
 const Home = () => {
   return (
     <div>
       <Banner />
       <HomeGoods></HomeGoods>
-      <HomeGallery />
       <Counter/>
+      <HomeGallery />
       <TestimonialGlider />
       <Deliver />
      <AboutUs/>
       <Contact />
+      <Footer/>
     </div>
   );
 };

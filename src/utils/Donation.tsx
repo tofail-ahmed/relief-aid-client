@@ -30,10 +30,7 @@ const Donation = ({onClick}:IDonationProps) => {
         Donation
         <GiSelfLove />
       </button>
-      <div className="text-3xl text-black">
-        <h1>Total Donation</h1>
-        <NumberCounter endValue={1234}/>
-      </div>
+     
     </div>
   );
 };

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import img from "../../assets/donorImg.jpg";
 import SectionHeader from "../../utils/SectionHeader";
 import Donation from "../../utils/Donation";
+import { FaDonate } from "react-icons/fa";
+import NumberCounter from "./NumberCounter";
 
 const BecomeADonor = () => {
   const [amount, setAmount] = useState(""); // State to hold the amount value
@@ -10,7 +12,7 @@ const BecomeADonor = () => {
   const handleButtonClick = (e) => {
     setAmount(e.target.id); // Set the amount value to the button's id
   };
-const handleDonation=()=>{
+ const handleDonation=()=>{
  if(amount){
   alert("Donation sucessful")
  }else{
@@ -64,7 +66,20 @@ const handleDonation=()=>{
               $50
             </button>
           </div>
-          <Donation onClick={handleDonation} />
+         
+          <div className='flex gap-4 items-center justify-between'>
+              <Donation onClick={handleDonation} />
+              <div className="  flex lg:flex-row flex-col gap-2 justify-center items-center space-y-2 text-white">
+                <span className="text-6xl">
+                  {" "}
+                  <FaDonate />
+                </span>
+                <span className="text-6xl">
+                  <NumberCounter endValue={99800} />+
+                </span>
+              
+              </div>
+            </div>
         </div>
         <div className="lg:w-[500px] w-[300px]">
           <img src={img} alt="" />

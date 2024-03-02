@@ -7,6 +7,8 @@ import SectionHeader from "../../utils/SectionHeader";
 import Donation from '../../utils/Donation';
 import BecomeADonor from '../../components/ui/BecomeADonor';
 import { IoCloudDone } from "react-icons/io5";
+import NumberCounter from "../../components/ui/NumberCounter";
+import { FaDonate } from "react-icons/fa";
 
 const AboutUs = () => {
   return (
@@ -33,7 +35,7 @@ const AboutUs = () => {
               guided by our commitment to empowerment, social change, and
               support for those in need.
             </p>
-            <div className=" grid grid-cols-2 my-2">
+            <div className=" grid grid-cols-2 my-8">
               <div className="flex items-center gap-2 text-xl font-bold">
                 <span className="text-orange-500 font-bold">
                   <IoCloudDone />
@@ -59,9 +61,18 @@ const AboutUs = () => {
                 <span className="text-black">Charity For Medical</span>
               </div>
             </div>
-            <div>
+            <div className='flex gap-4 items-center justify-between'>
               <Donation />
-              <div></div>
+              <div className="  flex lg:flex-row flex-col gap-2 justify-center items-center space-y-2 text-green-500">
+                <span className="text-6xl">
+                  {" "}
+                  <FaDonate />
+                </span>
+                <span className="text-6xl">
+                  <NumberCounter endValue={99800} />+
+                </span>
+              
+              </div>
             </div>
           </div>
         </div>
