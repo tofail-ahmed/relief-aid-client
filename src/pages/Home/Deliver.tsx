@@ -12,18 +12,33 @@ import SectionHeader from "../../utils/SectionHeader";
 const Deliver = () => {
   return (
     <div className="deliverBg py-10">
-      <SectionHeader text="WHAT WE DELIVER ?" />
+      <SectionHeader className="text-center my-8" text="WHAT WE DELIVER ?" />
       <Container>
-      <div className="grid lg:grid-cols-3 gap-4 ">
-      
-        <DeliverCard img={img2} text="LIVELIHOOD"/>
-        <DeliverCard img={img3} text="EDUCATION"/>
-        <DeliverCard img={img4} text="HEALTH"/>
-        <DeliverCard img={img5} text="CLEAN WATER"/>
-        <DeliverCard img={img6} text="COSERVATION"/>
-        <DeliverCard img={img1} text="HUMAN RIGHTS"/>
-      </div>
-    </Container>
+        <div className="grid lg:grid-cols-3 gap-4 ">
+          <DeliverCard img={img2} text="LIVELIHOOD" subText="EMPOWERING COMMUNITIES, FOSTERING RESILIENCE" />
+          <DeliverCard
+            img={img3}
+            text="EDUCATION"
+            subText="EMPOWERING MINDS, SHAPING FUTURES"
+          />
+          <DeliverCard
+            img={img4}
+            text="HEALTH"
+            subText=" HEALING LIVES, ONE STEP AT A TIME"
+          />
+          <DeliverCard
+            img={img5}
+            text="CLEAN WATER"
+            subText=" QUENCHING THIRST, REVITALIZING COMMUNITIES"
+          />
+          <DeliverCard img={img6} text="COSERVATION" subText="PROTECTING NATURE, PRESERVING HARMONY" />
+          <DeliverCard
+            img={img1}
+            text="HUMAN RIGHTS"
+            subText=" ADVOCATING EQUALITY, DEFENDING DIGNITY"
+          />
+        </div>
+      </Container>
     </div>
   );
 };
