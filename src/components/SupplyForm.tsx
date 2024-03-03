@@ -1,4 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
+import { cn } from "../libs/utils";
 
 const SupplyForm = () => {
       const { handleSubmit, register,formState: { errors } } = useForm<FormData>();
@@ -31,7 +32,7 @@ const SupplyForm = () => {
                   type="text"
                   id="name"
                   placeholder="Name"
-                  {...register("name")}
+                  {...register("name",{required:"Name is required"})}
                 />
                 {errors.name && (
                   <span className="text-red-900 font-semibold">
@@ -112,87 +113,13 @@ const SupplyForm = () => {
                   </span>
                 )}
               </div>
-              <div className="w-[70%] max-w-md">
-                <label
-                  className="block text-red-600 font-bold rounded-s-md"
-                  htmlFor="age"
-                >
-                  Age
-                </label>
-                <select id="age" {...register("age", { required: "Age is required" })}>
-                  <option value="">Select Age</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                </select>
-                {errors.age && (
-                  <span className="text-red-900 font-semibold">
-                    {errors.age.message}
-                  </span>
-                )}
-              </div>
-              <div className="w-[70%] max-w-md">
-                <label
-                  className="block text-red-600 font-bold rounded-s-md"
-                  htmlFor="gender"
-                >
-                  Gender
-                </label>
-                <div>
-                  <input
-                    type="radio"
-                    id="male"
-                    value="male"
-                    {...register("gender", { required: "Please select your gender" })}
-                  />
-                  <label htmlFor="male">Male</label>
-
-                  <input
-                    type="radio"
-                    id="female"
-                    value="female"
-                    {...register("gender", { required: "Please select your gender" })}
-                  />
-                  <label htmlFor="female">Female</label>
-
-                  <input
-                    type="radio"
-                    id="other"
-                    value="other"
-                    {...register("gender", { required: "Please select your gender" })}
-                  />
-                  <label htmlFor="other">Other</label>
-                </div>
-                {errors.gender && (
-                  <span className="text-red-900 font-semibold">
-                    {errors.gender.message}
-                  </span>
-                )}
-              </div>
-              <div className="w-[70%] max-w-md">
-                <label
-                  className="block text-red-600 font-bold rounded-s-md"
-                  htmlFor="terms"
-                >
-                  Accept Terms
-                </label>
-                <input
-                  type="checkbox"
-                  id="terms"
-                  {...register("terms", { required: "You must accept the terms" })}
-                />
-                {errors.terms && (
-                  <span className="text-red-900 font-semibold">
-                    {errors.terms.message}
-                  </span>
-                )}
-              </div>
+             
+         
+              
             </div>
           </div>
           <div className="flex justify-end">
-            <button type="submit" className="btn-success">
+            <button type="submit" className="bg-green-500 p-2 rounded-md ">
               Submit
             </button>
           </div>
