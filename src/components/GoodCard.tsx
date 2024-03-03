@@ -14,7 +14,7 @@ export interface IGoodCardProps{
 const GoodCard = ({ good,className }:IGoodCardProps) => {
   return (
     <div
-      className={`flex flex-col gap-2 justify-center  border-2 border-zinc-300 bg-slate-500/50 ${className}`}
+      className={`flex flex-col gap-2 justify-center rounded-md bg-slate-500/50 ${className}`}
     >
       <div className="mx-auto">
         <img

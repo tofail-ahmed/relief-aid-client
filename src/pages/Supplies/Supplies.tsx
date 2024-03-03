@@ -1,14 +1,28 @@
-import React from 'react'
+import React, { useState } from "react";
+
 import { useSupplyQuery } from "../../redux/supply/supplyApi";
 import { FcViewDetails } from "react-icons/fc";
 import { FaEdit } from "react-icons/fa";
-import { MdAutoDelete } from "react-icons/md";
+import { MdAddCircle, MdAutoDelete } from "react-icons/md";
+
+import { Link } from "react-router-dom";
+import Modal from "../../components/Modal";
 
 const Supplies = () => {
+  const [modal, setModal] = useState(false);
   const { data, isLoading } = useSupplyQuery("");
   if (isLoading) {
     return <div>Loading...</div>;
   }
+  const totalAmount = data.data.reduce((accumulator, currentValue) => {
+    // Ensure `amount` exists and is a number
+    const amount =
+      typeof currentValue.amount === "number" ? currentValue.amount : 0;
+
+    // Add the amount to the accumulator
+    return accumulator + amount;
+  }, 0);
+  console.log(totalAmount);
   console.log(data.data);
   return (
     <div className="text-black">
@@ -53,23 +67,44 @@ const Supplies = () => {
                   </td>
                   <td className="border-2 border-orange-500">
                     <div className="flex flex-col justify-end">
-                      <button className="flex items-center gap-2 text-[15px] font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 duration-500 rounded-md p-1">
+                      <button className=" btn  flex items-center gap-2 text-[15px] text-red-500 font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 hover:text-red-700 duration-500 rounded-md p-1">
                         Delete
                         <MdAutoDelete />
                       </button>
-                      <button>
+                      <button
+                        onClick={() => setModal((prev) => !prev)}
+                        className={` btn  flex items-center gap-2 text-[15px] text-green-700 font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 hover:text-green-900 duration-500 rounded-md p-1`}
+                      >
                         Update
                         <FaEdit />
                       </button>
-                      <button>
+                   {
+                    modal&& <Modal modal={modal} setModal={setModal}>lorem5000</Modal>
+                   }
+                      <button className=" btn  flex items-center gap-2 text-[15px] text-blue-500 font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 hover:text-blue-700 duration-500 rounded-md p-1">
                         Details
                         <FcViewDetails />
                       </button>
+                      <Link
+                        to="/dashboard/create-supply"
+                        className=" btn  flex items-center gap-2 text-[15px] text-purple-500 font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 hover:text-purple-700 duration-500 rounded-md p-1"
+                      >
+                        Add Supply
+                        <MdAddCircle />
+                      </Link>
                     </div>
                   </td>
                 </tr>
               ))}
             </tbody>
+            <tfoot>
+              <tr>
+                <th></th>
+                <th></th>
+                <th className="text-black">Total Supply:${totalAmount}+</th>
+                <th></th>
+              </tr>
+            </tfoot>
           </table>
         </div>
       </div>
@@ -77,4 +112,4 @@ const Supplies = () => {
   );
 };
 
-export default Supplies
+export default Supplies;

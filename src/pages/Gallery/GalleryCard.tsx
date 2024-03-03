@@ -18,7 +18,7 @@ const GalleryCard = ({ img, className }: IGalleryCardProps) => {
     });
   };
   return (
-    <div className="bg-gray-700">
+    <div className="bg-gray-700 rounded-md">
       <div className={`parent ${className} opacity-60`}>
         <button className="son lg:h-[300px] lg:w-[250px] w-[200px] h-[250px] rounded-ss-lg rounded-ee-lg">
           <img
