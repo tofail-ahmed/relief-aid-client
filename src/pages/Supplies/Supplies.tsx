@@ -7,6 +7,7 @@ import { MdAddCircle, MdAutoDelete } from "react-icons/md";
 
 import { Link } from "react-router-dom";
 import Modal from "../../components/Modal";
+import SupplyForm from "../../components/SupplyForm";
 
 const Supplies = () => {
   const [modal, setModal] = useState(false);
@@ -79,7 +80,7 @@ const Supplies = () => {
                         <FaEdit />
                       </button>
                    {
-                    modal&& <Modal modal={modal} setModal={setModal}>lorem5000</Modal>
+                    modal&& <Modal modal={modal} setModal={setModal}><SupplyForm></SupplyForm></Modal>
                    }
                       <button className=" btn  flex items-center gap-2 text-[15px] text-blue-500 font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 hover:text-blue-700 duration-500 rounded-md p-1">
                         Details
