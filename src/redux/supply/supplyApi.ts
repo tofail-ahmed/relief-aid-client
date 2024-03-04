@@ -8,6 +8,12 @@ const supplyApi = baseApi.injectEndpoints({
         method: "GET",
       }),
     }),
+    singleSupply:builder.query({
+      query:(id)=>({
+        url:`/spplies/${id}`,
+        method:"GET"
+      })
+    })
   }),
 });
-export const {useSupplyQuery}=supplyApi;
+export const {useSupplyQuery,useLazySingleSupplyQuery}=supplyApi;
