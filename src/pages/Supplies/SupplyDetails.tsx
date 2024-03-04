@@ -19,7 +19,7 @@ const SupplyDetails = () => {
           src={supplyPost.image}
           alt=""
         />
-        <div>
+        <div className="space-y-8 my-auto">
           <h1 className="text-xl font-bold text-orange-500 ">
             {supplyPost.title}
           </h1>

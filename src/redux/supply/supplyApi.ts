@@ -6,6 +6,7 @@ const supplyApi = baseApi.injectEndpoints({
       query: () => ({
         url: "/supplies",
         method: "GET",
+        
       }),
     }),
     singleSupply:builder.query({
@@ -13,7 +14,15 @@ const supplyApi = baseApi.injectEndpoints({
         url:`/supplies/${id}`,
         method:"GET"
       })
+    }),
+    createSupply:builder.mutation({
+      query:(body)=>({
+        url:"/supplies",
+        method:"POST",
+        body
+      }),
+     
     })
   }),
 });
-export const {useSupplyQuery,useSingleSupplyQuery}=supplyApi;
+export const {useSupplyQuery,useSingleSupplyQuery,useCreateSupplyMutation}=supplyApi;

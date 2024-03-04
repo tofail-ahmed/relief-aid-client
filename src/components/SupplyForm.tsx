@@ -1,12 +1,19 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { cn } from "../libs/utils";
-
+interface IFormData {
+  title: string;
+  category: string;
+  amount: number;
+  image: string;
+  description: string;
+ 
+}
 const SupplyForm = () => {
-      const { handleSubmit, register,formState: { errors } } = useForm<FormData>();
-      const onSubmit  = (data) => {
+      const { handleSubmit, register,formState: { errors } } = useForm<IFormData>();
+      const onSubmit:SubmitHandler<IFormData>  = (data) => {
         console.log(data);
       };
-      // const double=false;
+   
   return (
     <div>
       <div>
@@ -20,98 +27,98 @@ const SupplyForm = () => {
             <div className="w-[70%] max-w-md flex flex-col justify-center">
               <label
                 className="block text-orange-600 font-bold rounded-s-md"
-                htmlFor="name"
+                htmlFor="title"
               >
-                Name
+                Title
               </label>
               <input
                 className="p-2 rounded-md"
                 type="text"
-                id="name"
-                placeholder="Name"
-                {...register("name", { required: "Name is required" })}
+                id="title"
+                placeholder="Title"
+                {...register("title", { required: "Name is required" })}
               />
-              {errors.name && (
+              {errors.title && (
                 <div className="text-orange-900 font-semibold">
-                  {errors.name.message}
+                  {errors.title.message}
                 </div>
               )}
             </div>
             <div className="w-[70%] max-w-md flex flex-col justify-center">
               <label
                 className="block text-orange-600 font-bold rounded-s-md"
-                htmlFor="email"
+                htmlFor="category"
               >
-                Email
+                Category
               </label>
               <input
                 className="p-2 rounded-md"
                 type="text"
-                id="email"
-                placeholder="Email"
-                {...register("email", { required: "Email is required" })}
+                id="category"
+                placeholder="Category"
+                {...register("category", { required: "Category is required" })}
               />
-              {errors.email && (
+              {errors.category && (
                 <div className="text-orange-900 font-semibold">
-                  {errors.email.message}
+                  {errors.category.message}
                 </div>
               )}
             </div>
             <div className="w-[70%] max-w-md flex flex-col justify-center">
               <label
                 className="block text-orange-600 font-bold rounded-s-md"
-                htmlFor="password"
+                htmlFor="image"
               >
-                Password
-              </label>
-              <input
-                className="p-2 rounded-md"
-                type="password"
-                id="password"
-                placeholder="Password"
-                {...register("password", { required: "Password is required" })}
-              />
-              {errors.password && (
-                <div className="text-orange-900 font-semibold">
-                  {errors.password.message}
-                </div>
-              )}
-            </div>
-            <div className="w-[70%] max-w-md flex flex-col justify-center">
-              <label
-                className="block text-orange-600 font-bold rounded-s-md"
-                htmlFor="address"
-              >
-                Address
+                Image
               </label>
               <input
                 className="p-2 rounded-md"
                 type="text"
-                id="address"
-                placeholder="Address"
-                {...register("address", { required: "Address is required" })}
+                id="image"
+                placeholder="Image"
+                {...register("image", { required: "Image is required" })}
               />
-              {errors.address && (
+              {errors.image && (
                 <div className="text-orange-900 font-semibold">
-                  {errors.address.message}
+                  {errors.image.message}
                 </div>
               )}
             </div>
             <div className="w-[70%] max-w-md flex flex-col justify-center">
               <label
                 className="block text-orange-600 font-bold rounded-s-md"
-                htmlFor="textarea"
+                htmlFor="amount"
               >
-                Address
+                Amount
+              </label>
+              <input
+                className="p-2 rounded-md"
+                type="text"
+                id="amount"
+                placeholder="Amount"
+                {...register("amount", { required: "Amount is required" })}
+              />
+              {errors.amount && (
+                <div className="text-orange-900 font-semibold">
+                  {errors.amount.message}
+                </div>
+              )}
+            </div>
+            <div className="w-[70%] max-w-md flex flex-col justify-center">
+              <label
+                className="block text-orange-600 font-bold rounded-s-md"
+                htmlFor="description"
+              >
+                Description
               </label>
               <textarea
                 className="p-2 rounded-md"
-                id="textarea"
-                {...register("textarea", { required: "Textarea is required" })}
+                id="description"
+                {...register("description", { required: "Description is required" })}
               ></textarea>
-              {errors.textarea && (
+              {errors.description && (
                 <div className="text-orange-900 font-semibold">
-                  {errors.textarea.message}
+                  {errors.description.message}
                 </div>
               )}
             </div>
