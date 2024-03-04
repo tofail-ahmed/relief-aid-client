@@ -8,7 +8,7 @@ const Modal = ({ modal, setModal, children }) => {
                  
                 `}
     >
-      <div className="relative bg-orange-400/70 p-6 rounded-lg max-w-[80%] max-h-[80%] overflow-y-auto">
+      <div className="relative p-6 rounded-lg max-w-[80%] max-h-[80%] overflow-y-auto">
         <div>
           {children}
           

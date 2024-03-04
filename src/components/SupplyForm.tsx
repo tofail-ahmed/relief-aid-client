@@ -6,126 +6,120 @@ const SupplyForm = () => {
       const onSubmit  = (data) => {
         console.log(data);
       };
-      const double=true;
+      // const double=false;
   return (
       <div>
       <div>
         <form
-          className={cn("border border-green-950 p-4 max-w-lg mx-auto bg-green-600/40", {
-            "max-w-4xl bg-red-600": double,
-          })}
+          className={cn("border border-green-950 p-4 lg:w-[500px]  bg-slate-400")}
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="">
-            <div className={cn("border border-blue-600 p-4  bg-slate-400/70 grid grid-cols-1 justify-items-center  gap-4", {
-              "md:grid-cols-2 bg-green-600/90": double,
-            })}>
-              <div className="w-[70%] max-w-md">
+          <div className="flex justify-center  flex-col items-center mx-auto space-y-4">
+              <div className="w-[70%] max-w-md flex flex-col justify-center">
                 <label
-                  className="block text-red-600 font-bold rounded-s-md"
+                  className="block text-orange-600 font-bold rounded-s-md"
                   htmlFor="name"
                 >
                   Name
                 </label>
                 <input
-                  className="formInput"
+                  className="p-2 rounded-md"
                   type="text"
                   id="name"
                   placeholder="Name"
                   {...register("name",{required:"Name is required"})}
                 />
                 {errors.name && (
-                  <span className="text-red-900 font-semibold">
+                  <div className="text-orange-900 font-semibold">
                     {errors.name.message}
-                  </span>
+                  </div>
                 )}
               </div>
-              <div className="w-[70%] max-w-md">
+              <div className="w-[70%] max-w-md flex flex-col justify-center">
                 <label
-                  className="block text-red-600 font-bold rounded-s-md"
+                  className="block text-orange-600 font-bold rounded-s-md"
                   htmlFor="email"
                 >
                   Email
                 </label>
                 <input
-                  className="formInput"
+                  className="p-2 rounded-md"
                   type="text"
                   id="email"
                   placeholder="Email"
                   {...register("email", { required: "Email is required" })}
                 />
                 {errors.email && (
-                  <span className="text-red-900 font-semibold">
+                  <div className="text-orange-900 font-semibold">
                     {errors.email.message}
-                  </span>
+                  </div>
                 )}
               </div>
-              <div className="w-[70%] max-w-md">
+              <div className="w-[70%] max-w-md flex flex-col justify-center">
                 <label
-                  className="block text-red-600 font-bold rounded-s-md"
+                  className="block text-orange-600 font-bold rounded-s-md"
                   htmlFor="password"
                 >
                   Password
                 </label>
                 <input
-                  className="formInput"
+                  className="p-2 rounded-md"
                   type="password"
                   id="password"
                   placeholder="Password"
                   {...register("password", { required: "Password is required" })}
                 />
                 {errors.password && (
-                  <span className="text-red-900 font-semibold">
+                  <div className="text-orange-900 font-semibold">
                     {errors.password.message}
-                  </span>
+                  </div>
                 )}
               </div>
-              <div className="w-[70%] max-w-md">
+              <div className="w-[70%] max-w-md flex flex-col justify-center">
                 <label
-                  className="block text-red-600 font-bold rounded-s-md"
+                  className="block text-orange-600 font-bold rounded-s-md"
                   htmlFor="address"
                 >
                   Address
                 </label>
                 <input
+                 className="p-2 rounded-md"
                   type="text"
                   id="address"
                   placeholder="Address"
                   {...register("address", { required: "Address is required" })}
                 />
                 {errors.address && (
-                  <span className="text-red-900 font-semibold">
+                  <div className="text-orange-900 font-semibold">
                     {errors.address.message}
-                  </span>
+                  </div>
                 )}
               </div>
-              <div className="w-[70%] max-w-md">
+              <div className="w-[70%] max-w-md flex flex-col justify-center">
                 <label
-                  className="block text-red-600 font-bold rounded-s-md"
+                  className="block text-orange-600 font-bold rounded-s-md"
                   htmlFor="textarea"
                 >
                   Address
                 </label>
-                <textarea id="textarea" {...register("textarea", { required: "Textarea is required" })}></textarea>
+                <textarea  className="p-2 rounded-md" id="textarea" {...register("textarea", { required: "Textarea is required" })}></textarea>
                 {errors.textarea && (
-                  <span className="text-red-900 font-semibold">
+                  <div className="text-orange-900 font-semibold">
                     {errors.textarea.message}
-                  </span>
+                  </div>
                 )}
               </div>
              
          
               
-            </div>
+         
           </div>
           <div className="flex justify-end">
             <button type="submit" className="bg-green-500 p-2 rounded-md ">
               Submit
             </button>
           </div>
-          <div>
          
-          </div>
         </form>
       </div>
     </div>
