@@ -82,10 +82,10 @@ const Supplies = () => {
                    {
                     modal&& <Modal modal={modal} setModal={setModal}><SupplyForm></SupplyForm></Modal>
                    }
-                      <button className=" btn  flex items-center gap-2 text-[15px] text-blue-500 font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 hover:text-blue-700 duration-500 rounded-md p-1">
+                      <Link to={`/dashboard/supply-details/${supply._id}`} className=" btn  flex items-center gap-2 text-[15px] text-blue-500 font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 hover:text-blue-700 duration-500 rounded-md p-1">
                         Details
                         <FcViewDetails />
-                      </button>
+                      </Link>
                       <Link
                         to="/dashboard/create-supply"
                         className=" btn  flex items-center gap-2 text-[15px] text-purple-500 font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 hover:text-purple-700 duration-500 rounded-md p-1"

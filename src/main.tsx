@@ -17,6 +17,7 @@ import GoodDetails from "./components/GoodDetails";
 import Gallery from "./pages/Gallery/Gallery";
 import Supplies from "./pages/Supplies/Supplies";
 import CreateSupply from "./pages/Supplies/CreateSupply";
+import SupplyDetails from "./pages/Supplies/SupplyDetails";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
         path: "create-supply",
         element: <CreateSupply />,
       },
+      {
+        path:`supply-details/:id`,
+        element:<SupplyDetails/>
+      }
     ],
   },
 ]);
