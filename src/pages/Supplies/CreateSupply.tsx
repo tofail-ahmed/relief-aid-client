@@ -3,11 +3,18 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { cn } from '../../libs/utils';
 import SectionHeader from '../../utils/SectionHeader';
 import { useCreateSupplyMutation } from '../../redux/supply/supplyApi';
-
+interface ISupply {
+  title: string;
+  category: string;
+  amount: number;
+  image: string;
+  description: string;
+ 
+}
 const CreateSupply = () => {
   const [createSupply,{data,isLoading}]=useCreateSupplyMutation()
-  const { handleSubmit, register,formState: { errors } } = useForm<FormData>();
-  const onSubmit  = (supply) => {
+  const { handleSubmit, register,formState: { errors } } = useForm<ISupply>();
+  const onSubmit:SubmitHandler<ISupply>  = (supply) => {
 
     createSupply(supply);
     console.log(data)

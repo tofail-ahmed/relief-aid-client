@@ -8,6 +8,7 @@ const supplyApi = baseApi.injectEndpoints({
         method: "GET",
         
       }),
+     
     }),
     singleSupply:builder.query({
       query:(id)=>({
@@ -21,7 +22,13 @@ const supplyApi = baseApi.injectEndpoints({
         method:"POST",
         body
       }),
-     
+    
+    }),
+    deleteSupply:builder.mutation({
+      query:(id)=>({
+        url:`/supplies/${id}`,
+        method:"DELETE"
+      })
     })
   }),
 });

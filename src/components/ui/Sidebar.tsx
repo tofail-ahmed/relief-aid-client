@@ -2,7 +2,8 @@
 import { NavLink } from 'react-router-dom'
 import { cn } from '../../libs/utils'
 import logo from "../../assets/relief-aid-logo.png";
-
+import { IoIosAddCircle } from "react-icons/io";
+import { MdDashboardCustomize,MdDensitySmall } from "react-icons/md";
 const SideBar = () => {
   return (
     <div className="bg-rose-200 col-span-2 h-screen sticky top-0 left-0 overflow-auto ">
@@ -22,7 +23,7 @@ const SideBar = () => {
           }
           to={"/dashboard"}
         >
-          Dashboard
+         <span className="text-lg flex items-center gap-2"> Dashboard<MdDashboardCustomize /></span>
         </NavLink>
         <NavLink
           className={({ isActive }) =>
@@ -33,7 +34,7 @@ const SideBar = () => {
           }
           to={"/dashboard/supplies"}
         >
-          Supplies
+         <span className="text-lg flex items-center gap-2"> Supplies <MdDensitySmall /></span>
         </NavLink>
         <NavLink
           className={({ isActive }) =>
@@ -44,7 +45,7 @@ const SideBar = () => {
           }
           to={"/dashboard/create-supply"}
         >
-          Add Supply
+          <span className="text-lg flex items-center gap-2">Add Supply<IoIosAddCircle /></span>
         </NavLink>
       </nav>
     </div>

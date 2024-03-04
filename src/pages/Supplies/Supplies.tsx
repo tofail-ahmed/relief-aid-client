@@ -51,7 +51,7 @@ const Supplies = () => {
               </tr>
             </thead>
             <tbody className="p-2">
-              {data?.data.map((supply:ISupply) => (
+              {data?.data.map((supply: ISupply) => (
                 <tr>
                   <td className="border-2 border-orange-500">
                     <div className="flex items-center gap-3">
@@ -99,13 +99,13 @@ const Supplies = () => {
                         Details
                         <FcViewDetails />
                       </Link>
-                      <Link
+                      {/* <Link
                         to="/dashboard/create-supply"
                         className=" btn  flex items-center gap-2 text-[15px] text-purple-500 font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 hover:text-purple-700 duration-500 rounded-md p-1"
                       >
                         Add Supply
                         <MdAddCircle />
-                      </Link>
+                      </Link> */}
                     </div>
                   </td>
                 </tr>
@@ -113,10 +113,9 @@ const Supplies = () => {
             </tbody>
             <tfoot>
               <tr>
-                <th></th>
-                <th></th>
-                <th className="text-black">Total Supply:${totalAmount}+</th>
-                <th></th>
+                <th className=" text-xl font-bold text-orange-500">
+                  Total Supply:${totalAmount}+
+                </th>
               </tr>
             </tfoot>
           </table>
