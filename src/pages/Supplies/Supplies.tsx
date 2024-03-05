@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import { useSupplyQuery } from "../../redux/supply/supplyApi";
+import { useDeleteSupplyMutation, useSupplyQuery } from "../../redux/supply/supplyApi";
 import { FcViewDetails } from "react-icons/fc";
 import { FaEdit } from "react-icons/fa";
-import { MdAddCircle, MdAutoDelete } from "react-icons/md";
+import {  MdAutoDelete } from "react-icons/md";
 
 import { Link } from "react-router-dom";
 import Modal from "../../components/Modal";
@@ -17,6 +17,7 @@ interface ISupply{
   description: string;
 }
 const Supplies = () => {
+  const [deleteSupply]=useDeleteSupplyMutation();
   const [modal, setModal] = useState(false);
   const { data, isLoading } = useSupplyQuery("");
   if (isLoading) {
@@ -76,7 +77,7 @@ const Supplies = () => {
                   </td>
                   <td className="border-2 border-orange-500">
                     <div className="flex flex-col justify-end">
-                      <button className=" btn  flex items-center gap-2 text-[15px] text-red-500 font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 hover:text-red-700 duration-500 rounded-md p-1">
+                      <button onClick={()=>deleteSupply(supply._id)} className=" btn  flex items-center gap-2 text-[15px] text-red-500 font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 hover:text-red-700 duration-500 rounded-md p-1">
                         Delete
                         <MdAutoDelete />
                       </button>

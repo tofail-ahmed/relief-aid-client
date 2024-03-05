@@ -32,4 +32,4 @@ const supplyApi = baseApi.injectEndpoints({
     })
   }),
 });
-export const {useSupplyQuery,useSingleSupplyQuery,useCreateSupplyMutation}=supplyApi;
+export const {useSupplyQuery,useSingleSupplyQuery,useCreateSupplyMutation,useDeleteSupplyMutation}=supplyApi;
