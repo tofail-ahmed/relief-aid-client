@@ -1,9 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
+
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { useRegisterMutation } from "../redux/auth/authApi";
-
+interface FormData {
+  name: string;
+  email: string;
+  password: string;
+}
 const Register = () => {
       const navigate = useNavigate();
 
@@ -12,9 +16,9 @@ const Register = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>();
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data:FormData) => {
     const userInfo = {
       name: data.name,
       email: data.email,
@@ -23,14 +27,14 @@ const Register = () => {
 
     const res = await registration(userInfo);
 //     console.log(res.data);
-    if(res.data.success===true){
+    if('data' in res && res.data && res.data.success === true){
       alert("user registered successfully")
       navigate("/login")
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className=" flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full">
         <div>
           <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
@@ -58,7 +62,7 @@ const Register = () => {
                 aria-label="Email address"
                 {...register("email", { required: "Email is required" })}
                 type="email"
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                className="appearance-none  relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-none focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                 placeholder="Email address"
               />
               {errors.email && (
@@ -92,10 +96,10 @@ const Register = () => {
             </button>
           </div>
         </form>
-        <div>
+        <div className="text-black">
           <p>
             Already have an account?{" "}
-            <Link className="font-bold " to={"/login"}>
+            <Link className="font-bold underline" to={"/login"}>
               Login to Account
             </Link>
           </p>

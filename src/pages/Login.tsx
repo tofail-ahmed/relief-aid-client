@@ -19,7 +19,7 @@ const LoginForm = () => {
    };
    const res=await login(userInfo);
   //  console.log(res)
-  if(res.data.success===true){
+  if('data' in res && res.data && res.data.success === true){
     dispatch(setUser(userInfo))
     alert("Login succesfull")
     navigate('/')
@@ -27,7 +27,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-2 px-4 sm:px-6 lg:px-8">
+    <div className=" flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full">
         <div>
           <h2 className="mt-2 text-center text-3xl  font-extrabold text-gray-900">Login</h2>
@@ -71,8 +71,8 @@ const LoginForm = () => {
             </button>
           </div>
         </form>
-        <div>
-          <p>New user? <Link className='font-bold' to={'/register'}>Create Account</Link></p>
+        <div className='text-black'>
+          <p>New user? <Link className='font-bold underline' to={'/register'}>Create Account</Link></p>
         </div>
       </div>
     </div>

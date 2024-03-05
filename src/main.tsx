@@ -18,6 +18,7 @@ import Gallery from "./pages/Gallery/Gallery";
 import Supplies from "./pages/Supplies/Supplies";
 import CreateSupply from "./pages/Supplies/CreateSupply";
 import SupplyDetails from "./pages/Supplies/SupplyDetails";
+import DashboardHome from "./components/ui/DashboardHome";
 
 
 const router = createBrowserRouter([
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
     ),
     children: [
       {
+        index: true,
+        element: <DashboardHome />,
+      },
+      {
         path: "supplies",
         element: <Supplies />,
       },
@@ -68,9 +73,9 @@ const router = createBrowserRouter([
         element: <CreateSupply />,
       },
       {
-        path:`supply-details/:id`,
-        element:<SupplyDetails/>
-      }
+        path: `supply-details/:id`,
+        element: <SupplyDetails />,
+      },
     ],
   },
 ]);
