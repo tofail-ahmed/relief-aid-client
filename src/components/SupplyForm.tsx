@@ -11,7 +11,10 @@ interface IFormData {
   description: string;
  
 }
-const SupplyForm = ({id}) => {
+interface ISupplyFormProp{
+  id:string;
+}
+const SupplyForm = ({id}:ISupplyFormProp) => {
   const {data:supplyData}=useSingleSupplyQuery(id);
   const [updateSupply]=useUpdateSupplyMutation()
       const { handleSubmit, register,formState: { errors } } = useForm<IFormData>();

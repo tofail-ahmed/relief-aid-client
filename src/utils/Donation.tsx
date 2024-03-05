@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { GiSelfLove } from "react-icons/gi";
-import "./Donation.css"; // Import the CSS file where you define the styles
-import NumberCounter from "../components/ui/NumberCounter";
+import "./Donation.css";
 interface IDonationProps {
-  onClick?: () => void; // Define the type for onClick prop
+  onClick?: () => void; 
 }
 
 const Donation = ({onClick}:IDonationProps) => {

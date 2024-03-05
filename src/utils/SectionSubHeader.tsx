@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { ISectionHeader } from './SectionHeader'
 
 const SectionSubHeader = ({text,className}:ISectionHeader) => {
