@@ -1,5 +1,8 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { cn } from "../libs/utils";
+import SectionHeader from "../utils/SectionHeader";
+import { useSingleSupplyQuery, useUpdateSupplyMutation } from "../redux/supply/supplyApi";
+
 interface IFormData {
   title: string;
   category: string;
@@ -8,14 +11,21 @@ interface IFormData {
   description: string;
  
 }
-const SupplyForm = () => {
+const SupplyForm = ({id}) => {
+  const {data:supplyData}=useSingleSupplyQuery(id);
+  const [updateSupply]=useUpdateSupplyMutation()
       const { handleSubmit, register,formState: { errors } } = useForm<IFormData>();
       const onSubmit:SubmitHandler<IFormData>  = (data) => {
-        console.log(data);
+        // console.log(data);
+        updateSupply({id,body:data});
+        alert("Data updated successfully")
+
       };
-   
+  //  console.log(supplyData?.data)
   return (
-    <div>
+    <div className="bg-slate-400">
+      <SectionHeader className="text-center py-8" text={"Edit your Supply Post"}></SectionHeader>
+      
       <div>
         <form
           className={cn(
@@ -32,7 +42,8 @@ const SupplyForm = () => {
                 Title
               </label>
               <input
-                className="p-2 rounded-md"
+              defaultValue={supplyData?.data.title}
+                className="p-2 rounded-md text-black"
                 type="text"
                 id="title"
                 placeholder="Title"
@@ -52,7 +63,8 @@ const SupplyForm = () => {
                 Category
               </label>
               <input
-                className="p-2 rounded-md"
+              defaultValue={supplyData?.data.category}
+                className="p-2 rounded-md text-black"
                 type="text"
                 id="category"
                 placeholder="Category"
@@ -72,7 +84,8 @@ const SupplyForm = () => {
                 Image
               </label>
               <input
-                className="p-2 rounded-md"
+              defaultValue={supplyData?.data.image}
+                className="p-2 rounded-md text-black"
                 type="text"
                 id="image"
                 placeholder="Image"
@@ -92,7 +105,8 @@ const SupplyForm = () => {
                 Amount
               </label>
               <input
-                className="p-2 rounded-md"
+              defaultValue={supplyData?.data.amount}
+                className="p-2 rounded-md text-black"
                 type="text"
                 id="amount"
                 placeholder="Amount"
@@ -112,7 +126,8 @@ const SupplyForm = () => {
                 Description
               </label>
               <textarea
-                className="p-2 rounded-md"
+              defaultValue={supplyData?.data.description}
+                className="p-2 rounded-md text-black"
                 id="description"
                 {...register("description", { required: "Description is required" })}
               ></textarea>

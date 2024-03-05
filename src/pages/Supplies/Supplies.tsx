@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 
 import {
   useDeleteSupplyMutation,
@@ -21,6 +21,7 @@ interface ISupply {
 }
 const Supplies = () => {
   const [modal, setModal] = useState(false);
+  const [supplyId,setSupplyId]=useState("");
   const { data, isLoading } = useSupplyQuery("");
   const [deleteSupply, { data: deleteData }] = useDeleteSupplyMutation();
 
@@ -41,7 +42,7 @@ const Supplies = () => {
     },
     0
   );
-  const handleDelete = (id) => {
+  const handleDelete = (id:string) => {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this supply?"
     );
@@ -111,7 +112,9 @@ const Supplies = () => {
                           <MdAutoDelete />
                         </button>
                         <button
-                          onClick={() => setModal((prev) => !prev)}
+                          onClick={() =>{ 
+                            setModal((prev) => !prev)
+                          setSupplyId(supply._id)}}
                           className={` btn  flex items-center gap-2 text-[15px] text-green-700 font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 hover:text-green-900 duration-500 rounded-md p-1`}
                         >
                           Update
@@ -149,8 +152,8 @@ const Supplies = () => {
         </div>
       </div>
       {modal && (
-        <Modal modal={modal} setModal={setModal}>
-          <SupplyForm></SupplyForm>
+        <Modal  modal={modal} setModal={setModal}>
+          <SupplyForm id={supplyId}></SupplyForm>
         </Modal>
       )}
     </div>

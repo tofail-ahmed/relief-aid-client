@@ -18,6 +18,7 @@ import Gallery from "./pages/Gallery/Gallery";
 import Supplies from "./pages/Supplies/Supplies";
 import CreateSupply from "./pages/Supplies/CreateSupply";
 import SupplyDetails from "./pages/Supplies/SupplyDetails";
+import SupplyForm from "./components/SupplyForm";
 
 const router = createBrowserRouter([
   {
@@ -77,7 +78,11 @@ const router = createBrowserRouter([
       {
         path:`supply-details/:id`,
         element:<SupplyDetails/>
-      }
+      },
+      // {
+      //   path:`update-supply/:id`,
+      //   element:<SupplyForm/>
+      // }
     ],
   },
 ]);
