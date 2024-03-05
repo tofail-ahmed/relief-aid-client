@@ -8,7 +8,7 @@ const supplyApi = baseApi.injectEndpoints({
         method: "GET",
         
       }),
-     
+     providesTags:["supplies"]
     }),
     singleSupply:builder.query({
       query:(id)=>({
@@ -22,13 +22,15 @@ const supplyApi = baseApi.injectEndpoints({
         method:"POST",
         body
       }),
+      invalidatesTags:["supplies"]
     
     }),
     deleteSupply:builder.mutation({
       query:(id)=>({
         url:`/supplies/${id}`,
         method:"DELETE"
-      })
+      }),
+      invalidatesTags:["supplies"]
     })
   }),
 });
