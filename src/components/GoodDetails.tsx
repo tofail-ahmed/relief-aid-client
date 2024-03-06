@@ -16,8 +16,8 @@ const GoodDetails = () => {
   }
   return (
     <Container>
-      GoodDetails:
-      <div className="flex lg:flex-row flex-col justify-around items-center gap-8">
+    
+      <div className="flex lg:flex-row flex-col justify-around items-center gap-8 bg-green-300 p-4 rounded-md">
        <div>
           {" "}
           <img
