@@ -110,7 +110,7 @@ const CreateSupply = () => {
               </label>
               <input
                 className="p-2 rounded-md"
-                type="text"
+                type="number"
                 id="amount"
                 placeholder="Amount"
                 {...register("amount", { required: "Amount is required" })}

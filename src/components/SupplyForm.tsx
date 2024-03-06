@@ -19,12 +19,20 @@ const SupplyForm = ({id}:ISupplyFormProp) => {
   const [updateSupply]=useUpdateSupplyMutation()
       const { handleSubmit, register,formState: { errors } } = useForm<IFormData>();
       const onSubmit:SubmitHandler<IFormData>  = (data) => {
-        // console.log(data);
-        updateSupply({id,body:data});
+        const modifiedData = {
+          ...data,
+          title: data.title,
+          category: data.category,
+          amount: data.amount,
+          image: data.image,
+          description: data.description
+        };
+        updateSupply({id,body:modifiedData});
         alert("Data updated successfully")
-
       };
-  //  console.log(supplyData?.data)
+          
+
+
   return (
     <div className="bg-slate-400">
       <SectionHeader className="text-center py-8" text={"Edit your Supply Post"}></SectionHeader>
@@ -110,7 +118,7 @@ const SupplyForm = ({id}:ISupplyFormProp) => {
               <input
               defaultValue={supplyData?.data.amount}
                 className="p-2 rounded-md text-black"
-                type="text"
+                type="number"
                 id="amount"
                 placeholder="Amount"
                 {...register("amount", { required: "Amount is required" })}
