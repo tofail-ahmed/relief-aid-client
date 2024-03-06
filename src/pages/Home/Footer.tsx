@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import Container from "../../components/ui/Containert";
 import NumberCounter from "../../components/ui/NumberCounter";
 import Donation from "../../utils/Donation";
@@ -13,8 +13,8 @@ const Footer = () => {
   const [amount, setAmount] = useState(0); // State to hold the amount value
 
   // Function to handle button click and set the amount value
-  const handleButtonClick = (e) => {
-    setAmount(e.target.id); // Set the amount value to the button's id
+  const handleButtonClick =  (e: React.MouseEvent<HTMLButtonElement>) => {
+    setAmount(parseInt(e.currentTarget.id)); // Set the amount value to the button's id
   };
   const handleDonation = () => {
     if (amount) {

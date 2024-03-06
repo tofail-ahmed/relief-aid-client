@@ -1,7 +1,7 @@
-import React from 'react'
+
 
 import Container from '../../components/ui/Containert'
-import GalleryCard from './GalleryCard'
+import GalleryCard, { IImg } from './GalleryCard'
 import { useGalleryQuery } from '../../redux/gallery/galleryApi'
 const Gallery = () => {
       const {data,isLoading}=useGalleryQuery("");
@@ -13,7 +13,7 @@ if(isLoading){
   <div className='galleryBg'>
         <Container className='grid lg:grid-cols-5 grid-cols-2 gap-2 '>
      {
-      data?.data.map((img)=>
+      data?.data.map((img:IImg)=>
       ( <GalleryCard img={img}></GalleryCard>))
      }
       

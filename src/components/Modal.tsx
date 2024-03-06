@@ -1,4 +1,10 @@
-const Modal = ({ modal, setModal, children }) => {
+/* eslint-disable @typescript-eslint/no-unused-vars */
+interface IModalProps {
+  modal?: boolean;
+  setModal: React.Dispatch<React.SetStateAction<boolean>>;
+  children: React.ReactNode;
+}
+const Modal = ({ setModal, children }:IModalProps) => {
   const closeModal = () => {
     setModal(false);
   };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import img from "../../assets/donorImg.jpg";
 import SectionHeader from "../../utils/SectionHeader";
 import Donation from "../../utils/Donation";
@@ -9,9 +9,11 @@ const BecomeADonor = () => {
   const [amount, setAmount] = useState(""); // State to hold the amount value
 
   // Function to handle button click and set the amount value
-  const handleButtonClick = (e) => {
-    setAmount(e.target.id); // Set the amount value to the button's id
+  const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const amountValue = parseInt(e.currentTarget.id); // Parse id to an integer
+    setAmount(amountValue.toString()); // Set the amount value to the button's id as a string
   };
+  
  const handleDonation=()=>{
  if(amount){
   alert("Donation sucessful")

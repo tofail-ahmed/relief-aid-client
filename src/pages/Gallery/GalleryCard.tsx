@@ -1,10 +1,10 @@
-import React from "react";
+
 import "./GalleryCard.css";
 import { Link } from "react-router-dom";
-import { BiDonateHeart } from "react-icons/bi";
+
 import Donation from "../../utils/Donation";
-interface IImg {
-  img: string;
+export interface IImg {
+  img?: string;
 }
 export interface IGalleryCardProps {
   img: IImg;
@@ -31,9 +31,8 @@ const GalleryCard = ({ img, className }: IGalleryCardProps) => {
             to="/relief-goods"
             className="son-text flex items-center gap-1 font-bold"
           >
-            {/* <Donation/> */}
-            <span className="p-1 font-semibold">DONATE</span>
-            <BiDonateHeart />
+            <Donation/>
+           
           </Link>
         </button>
       </div>

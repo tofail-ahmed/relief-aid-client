@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { useGoodsQuery } from '../redux/auth/goods/goodsApi'
 import Container from '../components/ui/Containert'
 import GoodCard, { IGood } from '../components/GoodCard';

@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import img1 from "../../assets/right-side.jpg";
 import img2 from "../../assets/one-side-3.jpg";
 import img3 from "../../assets/helping-hand-1.jpg";
-import React, { useRef } from "react";
+import  { useRef } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { PiPlanetFill } from "react-icons/pi";
@@ -18,12 +19,14 @@ import "./Banner.css";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 export default function App() {
-  const progressCircle = useRef(null);
-  const progressContent = useRef(null);
-  const onAutoplayTimeLeft = (s, time, progress) => {
-    progressCircle.current!.style.setProperty("--progress", 1 - progress);
-    progressContent.current!.textContent = `${Math.ceil(time / 1000)}s`;
-  };
+  const progressCircle = useRef<SVGSVGElement>(null);
+  const progressContent = useRef<HTMLSpanElement>(null);
+  const onAutoplayTimeLeft = (_s: any, time: number, progress: number) => {
+    if (progressCircle.current && progressContent.current) {
+      progressCircle.current.style.setProperty("--progress", String(1 - progress));
+      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+    }
+  } 
   return (
     <div className="z-0 bannerBg">
       <Swiper

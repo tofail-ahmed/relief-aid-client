@@ -1,4 +1,3 @@
-// goodSlice.js
 
 import { createSlice } from '@reduxjs/toolkit';
 
