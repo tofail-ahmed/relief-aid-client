@@ -1,7 +1,7 @@
-import React from 'react'
+
 import Container from '../../components/ui/Containert'
 import { useGoodsQuery } from '../../redux/auth/goods/goodsApi'
-import GoodCard from "../../components/GoodCard"
+import GoodCard, { IGood } from "../../components/GoodCard"
 import { NavLink } from "react-router-dom";
 import { scrollToTop } from '../../utils/utils';
 
@@ -15,7 +15,7 @@ const HomeGoods = () => {
   return (
     <div className="goodsBg text-black py-10">
       <Container className="grid lg:grid-cols-3 grid-cols-2 gap-8 ">
-        {data?.data.slice(0, 6).map((good) => (
+        {data?.data.slice(0, 6).map((good:IGood) => (
           <GoodCard good={good}></GoodCard>
         ))}
       </Container>

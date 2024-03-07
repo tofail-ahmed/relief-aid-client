@@ -1,4 +1,4 @@
-import React from "react";
+
 import { FaDonate, FaStethoscope } from "react-icons/fa";
 import { SiTinyletter } from "react-icons/si";
 import SectionHeader from "../../utils/SectionHeader";

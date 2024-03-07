@@ -1,4 +1,3 @@
-import React from "react";
 import img1 from "../../assets/weDeliver/Birth+certificates+being+issued+post+cyclone.jpg";
 import img2 from "../../assets/weDeliver/Lady+with+chicken+livelihood+header.jpg";
 import img3 from "../../assets/weDeliver/Ranotsara+Primary+school+education.jpg";

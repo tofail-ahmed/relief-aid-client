@@ -1,7 +1,7 @@
 
 
 import Container from '../../components/ui/Containert'
-import GalleryCard from '../Gallery/GalleryCard'
+import GalleryCard, { IImg } from '../Gallery/GalleryCard'
 import { useGalleryQuery } from '../../redux/gallery/galleryApi'
 import { NavLink } from 'react-router-dom'
 import { scrollToTop } from '../../utils/utils'
@@ -15,7 +15,7 @@ if(isLoading){
   <div className='galleryBg py-10'>
         <Container className='grid lg:grid-cols-5 grid-cols-2 gap-2 '>
      {
-      data?.data.slice(0,10).map((img)=>
+      data?.data.slice(0,10).map((img:IImg)=>
       ( <GalleryCard className="rounded-ss-lg rounded-ee-lg" img={img}></GalleryCard>))
      }
       

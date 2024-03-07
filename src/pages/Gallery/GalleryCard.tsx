@@ -2,7 +2,7 @@
 import "./GalleryCard.css";
 import { Link } from "react-router-dom";
 
-import Donation from "../../utils/Donation";
+
 export interface IImg {
   img?: string;
 }
@@ -31,7 +31,8 @@ const GalleryCard = ({ img, className }: IGalleryCardProps) => {
             to="/relief-goods"
             className="son-text flex items-center gap-1 font-bold"
           >
-            <Donation/>
+            {/* <Donation/> */}
+            Donate now
            
           </Link>
         </button>
