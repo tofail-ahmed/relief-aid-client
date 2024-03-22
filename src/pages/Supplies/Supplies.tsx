@@ -54,7 +54,7 @@ const Supplies = () => {
 
   // };
 
-  const deleteItem = (id) => {
+  const deleteItem = (id:string) => {
     // Your delete logic here
     deleteSupply(id);
     // Show a success message
@@ -62,7 +62,7 @@ const Supplies = () => {
       position: "top-right",
     });
   };
-  const confirmDelete = (id) => {
+  const confirmDelete = (id:string) => {
     toast.warn(
       <div>
         <p>Are you sure you want to delete this item?</p>
@@ -92,7 +92,7 @@ const Supplies = () => {
     );
   };
 
-  // console.log(deleteData);
+  console.log(deleteData);
   return (
     <div>
       <div className="text-black">

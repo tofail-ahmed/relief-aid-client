@@ -69,7 +69,7 @@ const BecomeADonor = () => {
             </button>
           </div>
          
-          <div className='flex gap-4 items-center justify-between'>
+          <div className='flex lg:flex-row flex-col-reverse gap-4 items-center justify-between'>
               <Donation onClick={handleDonation} />
               <div className="  flex lg:flex-row flex-col gap-2 justify-center items-center space-y-2 text-white">
                 <span className="text-6xl">
