@@ -14,7 +14,11 @@ const Footer = () => {
 
   // Function to handle button click and set the amount value
   const handleButtonClick =  (e: React.MouseEvent<HTMLButtonElement>) => {
-    setAmount(parseInt(e.currentTarget.id)); // Set the amount value to the button's id
+    const value=e.currentTarget.id
+    setAmount(parseFloat(value.replace(/\$|,/g, '')));
+    // console.log(parseFloat(value.replace(/\$|,/g, '')))
+
+     
   };
   const handleDonation = () => {
     if (amount) {
