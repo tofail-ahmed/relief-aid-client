@@ -8,23 +8,23 @@ import { CiMail, CiPhone } from "react-icons/ci";
 import footer1 from "../../assets/footer-1.jpg";
 import footer2 from "../../assets/footer-2.jpg";
 import { CgCalendarDates } from "react-icons/cg";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Footer = () => {
   const [amount, setAmount] = useState(0); // State to hold the amount value
 
   // Function to handle button click and set the amount value
-  const handleButtonClick =  (e: React.MouseEvent<HTMLButtonElement>) => {
-    const value=e.currentTarget.id
-    setAmount(parseFloat(value.replace(/\$|,/g, '')));
+  const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const value = e.currentTarget.id;
+    setAmount(parseFloat(value.replace(/\$|,/g, "")));
     // console.log(parseFloat(value.replace(/\$|,/g, '')))
-
-     
   };
   const handleDonation = () => {
     if (amount) {
-      alert("Donation sucessful");
+      toast.success("Donation Success!!");
     } else {
-      alert("Please select an amount");
+      toast.error("Please select an amount!!")
     }
   };
   return (
@@ -198,35 +198,50 @@ const Footer = () => {
             <h1 className="text-white text-3xl font-bold py-4 underline">
               Newsletter
             </h1>
-            <p className=" py-2 text-xl text-slate-300">Subscribe our newsletter to get our latest updates & news.</p>
+            <p className=" py-2 text-xl text-slate-300">
+              Subscribe our newsletter to get our latest updates & news.
+            </p>
             <span className="flex items-center">
               {" "}
               <span>
-                <input  className="p-2 rounded-md text-black" type="email" placeholder="Email" />
+                <input
+                  className="p-2 rounded-md text-black"
+                  type="email"
+                  placeholder="Email"
+                />
               </span>
               <button className="text-xl text-orange-500 -ms-8">
                 <FaArrowRight />
               </button>
             </span>
             <div className="flex flex-row items-center gap-2 my-4">
-                  <button className="text-3xl p-2 border-[2px] border-slate-900 text-slate-900 rounded-md"><FaFacebook /></button>
-                  <button className="text-3xl p-2 border-[2px] border-slate-900 text-slate-900 rounded-md"><FaTwitter  /></button>
-                  <button className="text-3xl p-2 border-[2px] border-slate-900 text-slate-900 rounded-md"><FaYoutube   /></button>
-                  <button className="text-3xl p-2 border-[2px] border-slate-900 text-slate-900 rounded-md"><FaInstagramSquare    /></button>
+              <button className="text-3xl p-2 border-[2px] border-slate-900 text-slate-900 rounded-md">
+                <FaFacebook />
+              </button>
+              <button className="text-3xl p-2 border-[2px] border-slate-900 text-slate-900 rounded-md">
+                <FaTwitter />
+              </button>
+              <button className="text-3xl p-2 border-[2px] border-slate-900 text-slate-900 rounded-md">
+                <FaYoutube />
+              </button>
+              <button className="text-3xl p-2 border-[2px] border-slate-900 text-slate-900 rounded-md">
+                <FaInstagramSquare />
+              </button>
             </div>
           </div>
         </div>
 
         <div className="flex lg:flex-row flex-col justify-between items-center mx-8 bg-black/90 text-slate-500 px-2 py-4 my-4 text-lg font-smibold">
-            <div className="flex gap-4">
-                  <button>Terms of use</button> 
-                  <button>Privacy and Policy</button> 
-            </div>
-            <div className="text-center">
+          <div className="flex gap-4">
+            <button>Terms of use</button>
+            <button>Privacy and Policy</button>
+          </div>
+          <div className="text-center">
             Copyright © 2022 Masden. All Rights Reserved.
-            </div>
+          </div>
         </div>
       </Container>
+      <ToastContainer />
     </div>
   );
 };

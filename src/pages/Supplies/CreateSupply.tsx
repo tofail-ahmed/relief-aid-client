@@ -15,9 +15,13 @@ const CreateSupply = () => {
   const [createSupply,{data,isLoading}]=useCreateSupplyMutation()
   const { handleSubmit, register,formState: { errors } } = useForm<ISupply>();
   const onSubmit:SubmitHandler<ISupply>  = (supply) => {
-
-    createSupply(supply);
-    console.log(data)
+const supplyData={
+  ...supply,
+  amount:Number(supply.amount)
+}
+    createSupply(supplyData);
+    console.log(supplyData);
+    reset()
     
   };
     useEffect(() => {
@@ -68,13 +72,18 @@ const CreateSupply = () => {
               >
                 Category
               </label>
-              <input
+              <select
                 className="p-2 rounded-md"
-                type="text"
                 id="category"
-                placeholder="Category"
                 {...register("category", { required: "Category is required" })}
-              />
+              >
+                <option value="">Select a category</option>
+                <option value="Education">Education</option>
+                <option value="Housing">Housing</option>
+                <option value="Food">Food</option>
+                <option value="Sanitation">Sanitation</option>
+                <option value="Health">Health</option>
+              </select>
               {errors.category && (
                 <div className="text-orange-900 font-semibold">
                   {errors.category.message}

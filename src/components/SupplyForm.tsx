@@ -23,7 +23,7 @@ const SupplyForm = ({id}:ISupplyFormProp) => {
           ...data,
           title: data.title,
           category: data.category,
-          amount: data.amount,
+          amount: Number(data.amount),
           image: data.image,
           description: data.description
         };
