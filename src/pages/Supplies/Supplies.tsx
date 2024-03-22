@@ -11,6 +11,8 @@ import { MdAutoDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Modal from "../../components/Modal";
 import SupplyForm from "../../components/SupplyForm";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 interface ISupply {
   _id: string;
   title: string;
@@ -21,15 +23,13 @@ interface ISupply {
 }
 const Supplies = () => {
   const [modal, setModal] = useState(false);
-  const [supplyId,setSupplyId]=useState("");
+  const [supplyId, setSupplyId] = useState("");
   const { data, isLoading } = useSupplyQuery("");
   const [deleteSupply, { data: deleteData }] = useDeleteSupplyMutation();
 
   if (isLoading) {
     return <div>Loading...</div>;
   }
-
-  
 
   const totalAmount = data.data.reduce(
     (accumulator: number, currentValue: { amount?: number }) => {
@@ -42,24 +42,57 @@ const Supplies = () => {
     },
     0
   );
-  const handleDelete = (id:string) => {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this supply?"
-    );
-    console.log(confirmDelete)
-    if (confirmDelete) {
-      deleteSupply(id);
-      alert("Data deleted successfully");
-    }
-   
-    
+  // const handleDelete = (id:string) => {
+  //   const confirmDelete = toast.warn(
+  //     "Are you sure you want to delete this supply?"
+  //   );
+  //   console.log(confirmDelete)
+  //   if (confirmDelete) {
+  //     deleteSupply(id);
+  //     alert("Data deleted successfully");
+  //   }
+
+  // };
+
+  const deleteItem = (id) => {
+    // Your delete logic here
+    deleteSupply(id);
+    // Show a success message
+    toast.success("Item deleted successfully!", {
+      position: "top-right",
+    });
   };
-  
+  const confirmDelete = (id) => {
+    toast.warn(
+      <div>
+        <p>Are you sure you want to delete this item?</p>
+        <div className="flex gap-4">
+          <button
+            className="bg-red-300 px-2 rounded-md"
+            onClick={() => deleteItem(id)}
+          >
+            Yes
+          </button>
+          <button
+            className="bg-green-300 px-2 rounded-md"
+            onClick={() => toast.dismiss}
+          >
+            No
+          </button>
+        </div>
+      </div>,
+      {
+        position: "top-right",
+        autoClose: false,
+        closeOnClick: true,
+        closeButton: true,
+        draggable: false,
+        progress: undefined,
+      }
+    );
+  };
 
-  
-
-  
-  console.log(deleteData);
+  // console.log(deleteData);
   return (
     <div>
       <div className="text-black">
@@ -105,16 +138,18 @@ const Supplies = () => {
                     <td className="border-2 border-orange-500">
                       <div className="flex flex-col justify-end">
                         <button
-                          onClick={() => handleDelete(supply._id)}
+                          // onClick={() => handleDelete(supply._id)}
+                          onClick={() => confirmDelete(supply._id)}
                           className=" btn  flex items-center gap-2 text-[15px] text-red-500 font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 hover:text-red-700 duration-500 rounded-md p-1"
                         >
                           Delete
                           <MdAutoDelete />
                         </button>
                         <button
-                          onClick={() =>{ 
-                            setModal((prev) => !prev)
-                          setSupplyId(supply._id)}}
+                          onClick={() => {
+                            setModal((prev) => !prev);
+                            setSupplyId(supply._id);
+                          }}
                           className={` btn  flex items-center gap-2 text-[15px] text-green-700 font-semibold border-[1px] bg-slate-400 hover:bg-slate-500 hover:text-green-900 duration-500 rounded-md p-1`}
                         >
                           Update
@@ -152,10 +187,11 @@ const Supplies = () => {
         </div>
       </div>
       {modal && (
-        <Modal  modal={modal} setModal={setModal}>
+        <Modal modal={modal} setModal={setModal}>
           <SupplyForm id={supplyId}></SupplyForm>
         </Modal>
       )}
+      <ToastContainer />
     </div>
   );
 };
