@@ -15,7 +15,7 @@ const Deliver = () => {
         <SectionHeader className="text-center my-8" text="WHAT WE DELIVER ?" />
         <div className=" grid lg:grid-cols-3 gap-4 ">
           <DeliverCard
-          className="rounded-full"
+          className="lg:rounded-tl-full rounded-none"
             img={img2}
             text="LIVELIHOOD"
             subText="EMPOWERING COMMUNITIES, FOSTERING RESILIENCE"
@@ -26,11 +26,13 @@ const Deliver = () => {
             subText="EMPOWERING MINDS, SHAPING FUTURES"
           />
           <DeliverCard
+          className="lg:rounded-tr-full rounded-none"
             img={img4}
             text="HEALTH"
             subText=" HEALING LIVES, ONE STEP AT A TIME"
           />
           <DeliverCard
+          className="lg:rounded-bl-full rounded-none"
             img={img5}
             text="CLEAN WATER"
             subText=" QUENCHING THIRST, REVITALIZING COMMUNITIES"
@@ -41,6 +43,7 @@ const Deliver = () => {
             subText="PROTECTING NATURE, PRESERVING HARMONY"
           />
           <DeliverCard
+          className="lg:rounded-br-full rounded-none"
             img={img1}
             text="HUMAN RIGHTS"
             subText=" ADVOCATING EQUALITY, DEFENDING DIGNITY"

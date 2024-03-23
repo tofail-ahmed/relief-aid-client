@@ -17,11 +17,11 @@ const GoodCard = ({ good,className }:IGoodCardProps) => {
     >
       <div className="mx-auto">
         <img
-          className="lg:w-[400px] lg:h-[300px] w-[220px] h-[250px] rounded-md"
+          className="lg:w-[400px] lg:h-[300px] w-full h-[250px] rounded-md"
           src={good.image}
           alt=""
         />
-        <div className="flex justify-around lg:flex-row flex-col space-y-6 items-start py-4">
+        <div className="flex justify-around lg:flex-row flex-col space-y-6 items-start py-4 px-4">
           <div>
             <h1 className="text-lg font-bold">{good.title}</h1>
             <p >Category: <span  className="text-md font-bold">{good.category}</span></p>
