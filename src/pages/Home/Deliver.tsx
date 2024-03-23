@@ -10,11 +10,16 @@ import SectionHeader from "../../utils/SectionHeader";
 
 const Deliver = () => {
   return (
-    <div className="deliverBg py-10">
-      <SectionHeader className="text-center my-8" text="WHAT WE DELIVER ?" />
-      <Container>
-        <div className="grid lg:grid-cols-3 gap-4 ">
-          <DeliverCard img={img2} text="LIVELIHOOD" subText="EMPOWERING COMMUNITIES, FOSTERING RESILIENCE" />
+    <div className=" py-10">
+      <Container className="deliverBg">
+        <SectionHeader className="text-center my-8" text="WHAT WE DELIVER ?" />
+        <div className=" grid lg:grid-cols-3 gap-4 ">
+          <DeliverCard
+          className="rounded-full"
+            img={img2}
+            text="LIVELIHOOD"
+            subText="EMPOWERING COMMUNITIES, FOSTERING RESILIENCE"
+          />
           <DeliverCard
             img={img3}
             text="EDUCATION"
@@ -30,7 +35,11 @@ const Deliver = () => {
             text="CLEAN WATER"
             subText=" QUENCHING THIRST, REVITALIZING COMMUNITIES"
           />
-          <DeliverCard img={img6} text="COSERVATION" subText="PROTECTING NATURE, PRESERVING HARMONY" />
+          <DeliverCard
+            img={img6}
+            text="COSERVATION"
+            subText="PROTECTING NATURE, PRESERVING HARMONY"
+          />
           <DeliverCard
             img={img1}
             text="HUMAN RIGHTS"

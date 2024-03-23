@@ -5,6 +5,7 @@ import GalleryCard, { IImg } from '../Gallery/GalleryCard'
 import { useGalleryQuery } from '../../redux/gallery/galleryApi'
 import { NavLink } from 'react-router-dom'
 import { scrollToTop } from '../../utils/utils'
+import SectionHeader from '../../utils/SectionHeader'
 const HomeGallery = () => {
       const {data,isLoading}=useGalleryQuery("");
       // console.log(data)
@@ -12,8 +13,10 @@ if(isLoading){
       return <div>Loading...</div>
 }
   return (
-  <div className='galleryBg py-10'>
-        <Container className='grid lg:grid-cols-5 grid-cols-2 gap-2 '>
+  <div className=' py-10'>
+<SectionHeader text='SNAPS from our ACTIVITIES' className='text-center py-4'/>
+        <Container className='galleryBg grid lg:grid-cols-5 grid-cols-2 gap-2 '>
+
      {
       data?.data.slice(0,10).map((img:IImg)=>
       ( <GalleryCard className="rounded-ss-lg rounded-ee-lg" img={img}></GalleryCard>))

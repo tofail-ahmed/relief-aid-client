@@ -13,8 +13,8 @@ const Navbar = () => {
     dispatch(logOut());
   };
   return (
-    <div>
-      <Container className="bg-slate-400/50 flex justify-between items-center">
+    <div className="bg-slate-400/50">
+      <Container className=" flex justify-between items-center">
         <NavLink to={"/"}>
           <img className="size-[80px] p-2 rounded-full" src={logo} alt="" />
         </NavLink>

@@ -4,13 +4,14 @@ interface IDeliverCard {
   img: string;
   text: string;
   subText: string;
+  className?:string;
 }
-const DeliverCard = ({ img, text, subText }: IDeliverCard) => {
+const DeliverCard = ({ img, text, subText,className }: IDeliverCard) => {
   return (
-    <Link to={"/gallery"} className="relative">
-      <div className="bg-gray-900">
+    <Link to={"/gallery"} className={`relative `}>
+      <div className={`bg-gray-600  ${className}`}>
         <img
-          className=" lg:w-[420px] w-[420px] h-[300px] mx-auto opacity-60"
+          className={` lg:w-[420px] w-[420px] h-[300px] mx-auto opacity-60  ${className} `}
           src={img}
           alt=""
         />

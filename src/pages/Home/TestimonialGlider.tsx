@@ -4,6 +4,7 @@ import "./Testimonial.css";
 import { useTestimonialQuery } from "../../redux/testimonials/TestimonialApi";
 import Container from "../../components/ui/Containert";
 import { useEffect, useState } from "react";
+import SectionHeader from "../../utils/SectionHeader";
 
 interface IQuote {
   img: string;
@@ -40,8 +41,10 @@ export default function TestimonialGlider() {
   }
 
   return (
-    <div className="testimonialBg">
-      <Container className="py-10 ">
+    <div className="">
+      <Container className="testimonialBg py-10 ">
+      <SectionHeader className=" text-center py-4" text="PRECIOUS NOTES"/>
+
         <div className="App ">
           <div className="container ">
             <Glider

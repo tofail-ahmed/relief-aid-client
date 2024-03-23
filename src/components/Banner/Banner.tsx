@@ -28,14 +28,14 @@ export default function App() {
     }
   } 
   return (
-    <div className="z-0 bannerBg">
+    <div className="z-0 px-6">
       <Swiper
         spaceBetween={50}
         centeredSlides={true}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
         pagination={{
           clickable: true,
         }}
@@ -46,7 +46,7 @@ export default function App() {
       >
         <SwiperSlide>
           <div className="lg:w-[1280px] w-[550px] lg:h-[500px] h-[150px] relative">
-            <img className="bg-gray-900" src={img1} alt="" />
+            <img className="" src={img1} alt="" />
             <div className="absolute lg:top-[20%] top-[2%] lg:left-[5%] left-[5%] text-start lg:space-y-4 space-y-1">
               <h1 className="text-white lg:text-5xl text-xl lg:font-extrabold fontbold">
                 YOU HELP PEOPLE <span className="text-orange-500">?</span>
@@ -105,10 +105,10 @@ export default function App() {
             <img src={img3} alt="" />
             <div className="absolute lg:top-[30%] top-[2%] lg:left-[25%] left-[5%] text-start">
               <h1 className="text-slate-500 lg:text-5xl text-xl lg:font-extrabold fontbold">
-              GIVE HOPE, GIVE HELP, 
+                GIVE HOPE, GIVE HELP,
               </h1>
               <h1 className="text-slate-500 lg:text-5xl text-md lg:font-extrabold fontbold">
-              GIVE BACK: <span className="text-orange-500">DONATE TODAY</span>
+                GIVE BACK: <span className="text-orange-500">DONATE TODAY</span>
               </h1>
               <p className="text-slate-500 lg:font-medium lg:text-lg text-sm">
                 Join us in making a difference! Donate to support our cause or

@@ -102,9 +102,12 @@ const Header = () => {
           Dashboard
         </NavLink>
             </li>
+            <li>
+            
+            </li>
           </ul>
         </div>
-        <div className="text-3xl text-black" onClick={darkModeHnadler} >
+        <div className="text-xl text-black" onClick={darkModeHnadler} >
                 {darkMode ? <FiSun /> : <FaMoon />}
               </div>
         <div className="navbar-end">
