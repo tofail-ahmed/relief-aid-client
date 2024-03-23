@@ -4,11 +4,19 @@ import logo from "../../assets/relief-aid-logo.png";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { logOut } from "../../redux/auth/authSlice";
 import { IoIosLogIn, IoIosLogOut } from "react-icons/io";
+import { toggleDarkMode } from "../../redux/theme/themeSlice";
+import { FiSun } from "react-icons/fi";
+import { FaMoon } from "react-icons/fa";
 const Header = () => {
   const user = useAppSelector((state) => state.auth.user);
   const dispatch = useAppDispatch();
   const handleLogout = () => {
     dispatch(logOut());
+  };
+  const darkMode = useAppSelector((store) => store.theme.darkMode);
+  console.log(darkMode)
+  const darkModeHnadler = () => {
+    dispatch(toggleDarkMode());
   };
   return (
     <div>
@@ -96,6 +104,9 @@ const Header = () => {
             </li>
           </ul>
         </div>
+        <div className="text-3xl text-black" onClick={darkModeHnadler} >
+                {darkMode ? <FiSun /> : <FaMoon />}
+              </div>
         <div className="navbar-end">
           {user?.email ? (
             <button

@@ -1,18 +1,18 @@
 .goodsBg{
-      background: linear-gradient(276deg, rgba(127, 127, 230, 0.493), rgba(96, 179, 96, 0.596));
+      background: linear-gradient(276deg, #e67fd057, #60b36063);
 }
 .galleryBg{
-      background: linear-gradient(276deg, rgba(230, 127, 208, 0.493), rgba(179, 129, 96, 0.596));
+      background: linear-gradient(276deg, #e67fd04f, #b381605d);
 }
 .testimonialBg{
-      background: linear-gradient(276deg, rgba(128, 37, 108, 0.493), rgba(43, 105, 121, 0.596));
+      background: linear-gradient(276deg, #60b36062, #e67fd049);
 }
 .deliverBg{
-      background: linear-gradient(276deg, rgba(58, 138, 204, 0.493), rgba(204, 146, 37, 0.596));
+      background: linear-gradient(276deg, #b3816050, #60b36049);
 }
 .contactBg{
-      background: linear-gradient(276deg, rgba(82, 204, 58, 0.493), rgba(204, 37, 154, 0.596));
+      background: linear-gradient(276deg, #60b3604d, #e67fd048)
 }
 .aboutBg{
-      background: linear-gradient(276deg, rgba(58, 80, 204, 0.267), rgba(37, 204, 73, 0.336));
+      background: linear-gradient(276deg, #e67fd04b, #60b36059);
 }
