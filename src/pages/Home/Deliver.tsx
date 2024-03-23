@@ -10,8 +10,8 @@ import SectionHeader from "../../utils/SectionHeader";
 
 const Deliver = () => {
   return (
-    <div className=" py-10">
-      <Container className="deliverBg">
+    <div className=" ">
+      <Container className="deliverBg py-10">
         <SectionHeader className="text-center my-8" text="WHAT WE DELIVER ?" />
         <div className=" grid lg:grid-cols-3 gap-4 ">
           <DeliverCard

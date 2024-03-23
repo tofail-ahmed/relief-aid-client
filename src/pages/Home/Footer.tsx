@@ -28,8 +28,8 @@ const Footer = () => {
     }
   };
   return (
-    <div className="bg-black/70 py-10">
-      <Container>
+    <div >
+      <Container className="bg-black/50 py-10">
         <div className="flex gap-4 items-center justify-around lg:flex-row flex-col my-4">
           <div className="  flex  flex-col gap-2 justify-center items-center space-y-2 text-white">
             <span className="text-6xl">

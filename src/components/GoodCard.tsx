@@ -21,14 +21,14 @@ const GoodCard = ({ good,className }:IGoodCardProps) => {
           src={good.image}
           alt=""
         />
-        <div className="flex justify-around items-start py-4">
+        <div className="flex justify-around lg:flex-row flex-col space-y-6 items-start py-4">
           <div>
             <h1 className="text-lg font-bold">{good.title}</h1>
             <p >Category: <span  className="text-md font-bold">{good.category}</span></p>
             <p>Donated Amount: <span className='text-orange-700 font-bold'>${good.amount}</span></p>
           </div>
           <Link
-            className="bg-orange-500 hover:bg-slate-500 text-base px-2 py-1 rounded-md hover:text-white"
+            className="bg-orange-500 hover:bg-slate-500 text-base px-2 py-1 rounded-md hover:text-white duration-500"
             to={`/relief-details/${good._id}`}
           >
             Details

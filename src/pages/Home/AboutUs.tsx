@@ -12,8 +12,8 @@ import { FaDonate } from "react-icons/fa";
 
 const AboutUs = () => {
   return (
-    <div className="py-10 aboutBg">
-      <Container>
+    <div className="">
+      <Container className='aboutBg py-10 '>
         <SectionHeader className="text-center py-10" text="WHAT WE DO?" />
         <div className="flex lg:flex-row flex-col-reverse justify-around items-center">
           <div className="lg:w-[500px] w-[300px]">

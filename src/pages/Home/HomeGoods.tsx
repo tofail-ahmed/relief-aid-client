@@ -13,21 +13,23 @@ const HomeGoods = () => {
             return <div>Loading...</div>
       }
   return (
-    <div className=" text-black py-10">
-      <Container className=" goodsBg grid lg:grid-cols-3 grid-cols-2 gap-8 ">
-        {data?.data.slice(0, 6).map((good:IGood) => (
-          <GoodCard good={good}></GoodCard>
-        ))}
+    <div className=" text-black ">
+      <Container className=" goodsBg py-10  ">
+        <div className="grid lg:grid-cols-3 grid-cols-2 gap-8">
+          {data?.data.slice(0, 6).map((good: IGood) => (
+            <GoodCard good={good}></GoodCard>
+          ))}
+        </div>
+        <div className="flex justify-center">
+          <NavLink
+            onClick={scrollToTop}
+            className="bg-orange-500 hover:bg-slate-500 text-lg  hover:text-white rounded-md px-2 py-1 my-4 duration-500"
+            to={"/relief-goods"}
+          >
+            See All
+          </NavLink>
+        </div>
       </Container>
-      <div className="flex justify-center">
-        <NavLink
-          onClick={scrollToTop}
-          className="bg-orange-500 hover:bg-slate-500 text-lg  hover:text-white rounded-md px-2 py-1 my-4 duration-500"
-          to={"/relief-goods"}
-        >
-          See All
-        </NavLink>
-      </div>
     </div>
   );
 }

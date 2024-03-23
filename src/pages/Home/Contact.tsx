@@ -29,11 +29,12 @@ const Contact = () => {
     console.log(formData); // Log form data
     // You can perform additional actions like sending data to server here
     alert("Info added successfully")
+    
   };
 
   return (
-    <div className="contactBg py-10">
-      <Container className="text-black flex justify-between items-center lg:flex-row flex-col ">
+    <div className="">
+      <Container className="contactBg  py-10  text-black flex justify-between items-center lg:flex-row flex-col ">
         <div className="mx-auto text-center">
           <SectionHeader text="GET IN TOUCH" />
           <h3 className="text-lg font-semibold">

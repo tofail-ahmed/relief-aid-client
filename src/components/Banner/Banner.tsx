@@ -28,7 +28,7 @@ export default function App() {
     }
   } 
   return (
-    <div className="z-0 px-6">
+    <div className="z-0 px-8">
       <Swiper
         spaceBetween={50}
         centeredSlides={true}
@@ -45,7 +45,7 @@ export default function App() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className="lg:w-[1280px] w-[550px] lg:h-[500px] h-[150px] relative">
+          <div className="lg:w-[1280px] w-[550px]  lg:h-[500px] h-[150px] relative">
             <img className="" src={img1} alt="" />
             <div className="absolute lg:top-[20%] top-[2%] lg:left-[5%] left-[5%] text-start lg:space-y-4 space-y-1">
               <h1 className="text-white lg:text-5xl text-xl lg:font-extrabold fontbold">
